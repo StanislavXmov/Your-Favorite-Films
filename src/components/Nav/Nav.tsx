@@ -1,9 +1,10 @@
+import { Logo } from "components";
 import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
   return (
     <Styled.Navigation>
-      <Styled.Logo />
+      <Logo />
       <Styled.List>
         <Styled.Item>
           <Styled.ItemLink href="/" title="Home">
