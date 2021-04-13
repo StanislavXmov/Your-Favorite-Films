@@ -1,4 +1,4 @@
-import { Container, List, Item, ItemLink, Logo } from "./styles";
+import { Container, List, Item, ItemLink, Logo } from "./Nav.styles";
 
 export const Nav = () => {
   return (
