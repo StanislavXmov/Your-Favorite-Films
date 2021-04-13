@@ -1,7 +1,11 @@
-import { FC } from "react";
+import { ReactNode } from "react";
 import { Nav } from "components";
 
-export const MainLayout: FC = ({ children }) => {
+interface Props {
+  children: ReactNode;
+}
+
+export const MainLayout = ({ children }: Props) => {
   return (
     <>
       <Nav />
