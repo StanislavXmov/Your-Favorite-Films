@@ -1,4 +1,4 @@
-import { MainLayout } from "containers";
+import { MainLayout } from "components";
 import "./App.css";
 
 function App() {
