@@ -1,7 +1,8 @@
-import React from "react";
+import * as Styled from "./Logo.styles";
+import logo from "./assets/logo.svg";
 
-const Logo = () => {
-  return <div></div>;
+export const Logo = () => {
+  return <Styled.Logo src={logo} />;
 };
 
 export default Logo;
