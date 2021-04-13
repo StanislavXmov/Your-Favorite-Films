@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.nav`
+export const Navigation = styled.nav`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr auto;

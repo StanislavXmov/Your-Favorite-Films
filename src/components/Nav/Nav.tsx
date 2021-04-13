@@ -2,7 +2,7 @@ import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
   return (
-    <Styled.Container>
+    <Styled.Navigation>
       <Styled.Logo />
       <Styled.List>
         <Styled.Item>
@@ -16,6 +16,6 @@ export const Nav = () => {
           </Styled.ItemLink>
         </Styled.Item>
       </Styled.List>
-    </Styled.Container>
+    </Styled.Navigation>
   );
 };
