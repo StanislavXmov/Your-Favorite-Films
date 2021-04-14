@@ -9,9 +9,7 @@ export const Navigation = styled.nav`
   background-color: #654062;
   color: white;
   border: 3px solid black;
-  border-radius: 6px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-radius: 0 0 6px 6px;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
