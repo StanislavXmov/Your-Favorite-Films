@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { Container, Logo, NavButton, breakpoints } from "components";
+import { Container, Logo, NavButton, NavLink, breakpoints } from "components";
 import { useEffect, useState } from "react";
 import * as Styled from "./Nav.styles";
 
@@ -21,14 +21,10 @@ export const Nav = () => {
           <Logo />
           <Styled.List isOpen={isOpen} isTabletOrMobile={isTabletOrMobile}>
             <Styled.Item>
-              <Styled.ItemLink href="/" title="Home">
-                Home
-              </Styled.ItemLink>
+              <NavLink to="/" title="Home" exact />
             </Styled.Item>
             <Styled.Item>
-              <Styled.ItemLink href="/" title="Favorites">
-                Favorites
-              </Styled.ItemLink>
+              <NavLink to="/favorites" title="Favorites" />
             </Styled.Item>
           </Styled.List>
           {isTabletOrMobile && (
