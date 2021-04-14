@@ -54,11 +54,11 @@ export const List = styled.ul<ListProps>`
             width: 66%;
             grid-auto-flow: row;
             padding: 16px;
-            background-color: ${colors.logoGrey};
+            background-color: ${colors.backgroundColorLighter};
             border: 3px solid black;
             border-radius: 6px;
             & a {
-              color: ${colors.backgroundColor};
+              color: ${colors.white};
               font-weight: bold;
             }
           `;
