@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ReactNode } from "react";
 import { colors } from "../UI";
 
 export const Navigation = styled.nav`
@@ -29,7 +30,13 @@ export const Logo = styled.div`
   background-size: contain;
 `;
 
-export const List = styled.ul`
+interface ListProps {
+  isTabletOrMobile: boolean;
+  isOpen: boolean;
+  children?: ReactNode[];
+}
+
+export const List = styled.ul<ListProps>`
   display: grid;
   grid-gap: 30px;
   grid-auto-flow: column;

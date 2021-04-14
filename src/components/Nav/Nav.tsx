@@ -14,7 +14,7 @@ export const Nav = () => {
       <Container>
         <Styled.NavWraper>
           <Logo />
-          <Styled.List>
+          <Styled.List isOpen={isOpen} isTabletOrMobile={isTabletOrMobile}>
             <Styled.Item>
               <Styled.ItemLink href="/" title="Home">
                 Home
