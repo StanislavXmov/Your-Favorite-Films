@@ -6,9 +6,10 @@ interface Props {
   to: string;
   title: string;
   exact?: boolean;
+  onClick?: () => void;
 }
 
-export const NavLink = ({ to, title, exact }: Props) => {
+export const NavLink = ({ to, title, exact, onClick }: Props) => {
   return (
     <Link
       css={css`
@@ -25,6 +26,7 @@ export const NavLink = ({ to, title, exact }: Props) => {
       to={to}
       activeClassName="active"
       exact={exact}
+      onClick={onClick}
     >
       {title}
     </Link>

@@ -21,10 +21,19 @@ export const Nav = () => {
           <Logo />
           <Styled.List isOpen={isOpen} isTabletOrMobile={isTabletOrMobile}>
             <Styled.Item>
-              <NavLink to="/" title="Home" exact />
+              <NavLink
+                to="/"
+                title="Home"
+                exact
+                onClick={() => setIsOpen(false)}
+              />
             </Styled.Item>
             <Styled.Item>
-              <NavLink to="/favorites" title="Favorites" />
+              <NavLink
+                to="/favorites"
+                title="Favorites"
+                onClick={() => setIsOpen(false)}
+              />
             </Styled.Item>
           </Styled.List>
           {isTabletOrMobile && (
