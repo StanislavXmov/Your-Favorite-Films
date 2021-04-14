@@ -13,10 +13,7 @@ export const NavWraper = styled.nav`
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 10px;
-  background-color: #654062;
   color: white;
-  border: 3px solid black;
-  border-radius: 0 0 6px 6px;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
