@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "components";
+import { colors } from "../UI";
 
 export const Navigation = styled.nav`
   background-color: ${colors.backgroundColor};
