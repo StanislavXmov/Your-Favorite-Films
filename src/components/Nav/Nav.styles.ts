@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import { ReactNode } from "react";
 import { colors } from "../UI";
 
@@ -40,10 +41,35 @@ export const List = styled.ul<ListProps>`
   display: grid;
   grid-gap: 30px;
   grid-auto-flow: column;
+  ${(props) => {
+    if (props.isTabletOrMobile) {
+      return props.isTabletOrMobile && !props.isOpen
+        ? css`
+            display: none;
+          `
+        : css`
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 66%;
+            grid-auto-flow: row;
+            padding: 16px;
+            background-color: ${colors.logoGrey};
+            border: 3px solid black;
+            border-radius: 6px;
+            & a {
+              color: ${colors.backgroundColor};
+              font-weight: bold;
+            }
+          `;
+    }
+    return "";
+  }}
 `;
 
 export const Item = styled.li`
   display: inline;
+  text-align: center;
 `;
 export const ItemLink = styled.a`
   color: #fff;
