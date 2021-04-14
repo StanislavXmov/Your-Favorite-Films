@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import { colors } from "components";
 
 export const Navigation = styled.nav`
-  background-color: #654062;
-  color: white;
+  background-color: ${colors.backgroundColor};
+  color: ${colors.white};
   border: 3px solid black;
   border-radius: 0 0 6px 6px;
 `;
@@ -13,7 +14,7 @@ export const NavWraper = styled.nav`
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 10px;
-  color: white;
+  color: ${colors.white};
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
