@@ -16,9 +16,9 @@ export const NavWraper = styled.nav`
   padding: 10px;
   color: ${colors.white};
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-  }
+  } */
 `;
 
 export const Logo = styled.div`
