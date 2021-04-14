@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 
 export const Navigation = styled.nav`
+  background-color: #654062;
+  color: white;
+  border: 3px solid black;
+  border-radius: 0 0 6px 6px;
+`;
+
+export const NavWraper = styled.nav`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr auto;
