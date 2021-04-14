@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakpoints } from "components";
 
 export const Container = styled.div`
   width: 100%;
@@ -7,11 +8,11 @@ export const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}) {
     max-width: 720px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${breakpoints.laptop}) {
     max-width: 1140px;
   }
 `;
