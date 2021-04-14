@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import { Container, Logo, NavButton, breakpoints } from "components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
@@ -8,6 +8,11 @@ export const Nav = () => {
   const isTabletOrMobile = useMediaQuery({
     query: `(max-width: ${breakpoints.tablet})`,
   });
+  useEffect(() => {
+    if (!isTabletOrMobile) {
+      setIsOpen(isTabletOrMobile);
+    }
+  }, [isTabletOrMobile]);
 
   return (
     <Styled.Navigation>
