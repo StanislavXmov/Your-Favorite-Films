@@ -1,8 +1,10 @@
 import { useMediaQuery } from "react-responsive";
 import { Container, Logo, NavButton, breakpoints } from "components";
+import { useState } from "react";
 import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const isTabletOrMobile = useMediaQuery({
     query: `(max-width: ${breakpoints.tablet})`,
   });
@@ -24,7 +26,9 @@ export const Nav = () => {
               </Styled.ItemLink>
             </Styled.Item>
           </Styled.List>
-          {isTabletOrMobile && <NavButton />}
+          {isTabletOrMobile && (
+            <NavButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+          )}
         </Styled.NavWraper>
       </Container>
     </Styled.Navigation>
