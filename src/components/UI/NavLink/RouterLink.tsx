@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { NavLink as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { css } from "@emotion/react";
 
 interface Props {
@@ -9,9 +9,9 @@ interface Props {
   onClick?: () => void;
 }
 
-export const NavLink = ({ to, title, exact, onClick }: Props) => {
+export const RouterLink = ({ to, title, exact, onClick }: Props) => {
   return (
-    <Link
+    <NavLink
       css={css`
         color: #fff;
         text-decoration: none;
@@ -29,6 +29,6 @@ export const NavLink = ({ to, title, exact, onClick }: Props) => {
       onClick={onClick}
     >
       {title}
-    </Link>
+    </NavLink>
   );
 };
