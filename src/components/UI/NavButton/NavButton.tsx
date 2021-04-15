@@ -44,14 +44,14 @@ export const NavButton = ({ isOpen, onClick }: Props) => {
           css={toggleOpen}
           className={!isOpen ? "active" : ""}
           d="M2 17H37M2 2H37M2 32H37"
-          stroke={colors.white}
+          stroke={colors.fontColorLight}
           strokeWidth="4"
         />
         <path
           css={toggleClose}
           className={isOpen ? "active" : ""}
           d="M2 2L37 32M2 32L37 2"
-          stroke={colors.white}
+          stroke={colors.fontColorLight}
           strokeWidth="4"
         />
       </svg>

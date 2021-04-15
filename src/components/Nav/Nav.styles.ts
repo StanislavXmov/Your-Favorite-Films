@@ -5,7 +5,7 @@ import { colors } from "../UI";
 
 export const Navigation = styled.nav`
   background-color: ${colors.backgroundColor};
-  color: ${colors.white};
+  color: ${colors.fontColorLight};
   border: 3px solid black;
   border-radius: 0 0 6px 6px;
 `;
@@ -16,7 +16,7 @@ export const NavWraper = styled.div`
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 10px;
-  color: ${colors.white};
+  color: ${colors.fontColorLight};
 
   /* @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -59,7 +59,7 @@ export const List = styled.ul<ListProps>`
             border: 3px solid black;
             border-radius: 6px;
             & a {
-              color: ${colors.white};
+              color: ${colors.fontColorLight};
               font-weight: bold;
             }
           `;
@@ -73,7 +73,7 @@ export const Item = styled.li`
   text-align: center;
 `;
 export const ItemLink = styled.a`
-  color: #fff;
+  color: ${colors.fontColorLight};
   text-decoration: none;
   font-size: 18px;
 `;
