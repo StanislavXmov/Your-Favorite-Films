@@ -5,7 +5,6 @@ import { Container } from "components";
 import { Logo, RouterLink, breakpoints } from "../UI";
 
 import { NavButton } from "./NavButton";
-
 import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
