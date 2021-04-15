@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container } from "components";
 import { Logo, RouterLink, breakpoints } from "../UI";
 
-import { NavButton } from "./NavButton";
+import { NavBurger } from "./NavBurger";
 import * as Styled from "./Nav.styles";
 
 export const Nav = () => {
@@ -41,7 +41,7 @@ export const Nav = () => {
             </Styled.Item>
           </Styled.List>
           {isTabletOrMobile && (
-            <NavButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+            <NavBurger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
           )}
         </Styled.NavWraper>
       </Container>
