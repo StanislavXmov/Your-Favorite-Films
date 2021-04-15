@@ -10,7 +10,7 @@ export const Navigation = styled.nav`
   border-radius: 0 0 6px 6px;
 `;
 
-export const NavWraper = styled.nav`
+export const NavWraper = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr auto;
@@ -41,6 +41,7 @@ export const List = styled.ul<ListProps>`
   display: grid;
   grid-gap: 30px;
   grid-auto-flow: column;
+  margin: 0;
   ${(props) => {
     if (props.isTabletOrMobile) {
       return props.isTabletOrMobile && !props.isOpen
