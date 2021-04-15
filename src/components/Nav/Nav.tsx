@@ -2,7 +2,9 @@ import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 
 import { Container } from "components";
-import { Logo, NavButton, RouterLink, breakpoints } from "../UI";
+import { Logo, RouterLink, breakpoints } from "../UI";
+
+import { NavButton } from "./NavButton";
 
 import * as Styled from "./Nav.styles";
 
