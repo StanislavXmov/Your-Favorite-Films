@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <MainLayout>
-        <Route path="/favorites">
+        <Route path="/favorites" exact>
           <p>Favorites</p>
         </Route>
         <Route path="/" exact>
