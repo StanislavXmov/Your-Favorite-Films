@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { breakpoints } from "components";
+
+import { breakpoints } from "../UI";
 
 export const Container = styled.div`
   position: relative;
