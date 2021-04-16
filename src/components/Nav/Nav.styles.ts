@@ -17,24 +17,35 @@ export const NavWraper = styled.div`
   align-items: center;
   padding: 10px;
   color: ${colors.fontColorLight};
-
-  /* @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  } */
 `;
 
-export const Logo = styled.div`
-  width: 93px;
-  height: 30px;
-  background-image: url(logo.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-`;
-
-interface ListProps {
+type ListProps = {
   isTabletOrMobile: boolean;
   isOpen: boolean;
   children?: ReactNode[];
+};
+
+function getListResponsiveStyles(isListOpen: boolean) {
+  if (isListOpen) {
+    return css`
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 66%;
+      grid-auto-flow: row;
+      padding: 16px;
+      background-color: ${colors.backgroundColorLighter};
+      border: 3px solid black;
+      border-radius: 6px;
+      & a {
+        color: ${colors.fontColorLight};
+        font-weight: bold;
+      }
+    `;
+  }
+  return css`
+    display: none;
+  `;
 }
 
 export const List = styled.ul<ListProps>`
@@ -44,25 +55,7 @@ export const List = styled.ul<ListProps>`
   margin: 0;
   ${(props) => {
     if (props.isTabletOrMobile) {
-      return props.isTabletOrMobile && !props.isOpen
-        ? css`
-            display: none;
-          `
-        : css`
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            width: 66%;
-            grid-auto-flow: row;
-            padding: 16px;
-            background-color: ${colors.backgroundColorLighter};
-            border: 3px solid black;
-            border-radius: 6px;
-            & a {
-              color: ${colors.fontColorLight};
-              font-weight: bold;
-            }
-          `;
+      return getListResponsiveStyles(props.isOpen);
     }
     return "";
   }}
