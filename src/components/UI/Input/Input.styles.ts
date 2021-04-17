@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "components/UI";
+import { colors, breakpoints } from "components/UI";
 
 export const Input = styled.input`
   box-sizing: border-box;
@@ -16,5 +16,10 @@ export const Input = styled.input`
   &:focus,
   &:active {
     border: 2px solid ${colors.backgroundColorLighter};
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    margin-bottom: 10px;
   }
 `;

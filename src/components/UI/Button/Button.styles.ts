@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "components/UI";
+import { colors, breakpoints } from "components/UI";
 
 export const Button = styled.button`
   border: 2px solid ${colors.backgroundColor};
@@ -27,5 +27,9 @@ export const Button = styled.button`
     border: 2px solid ${colors.fontColorLightDark};
     color: ${colors.fontColorLightDark};
     cursor: not-allowed;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 40%;
   }
 `;
