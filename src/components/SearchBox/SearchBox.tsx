@@ -23,6 +23,7 @@ export const SearchBox = () => {
             type="text"
             placeholder="Enter film title"
           />
+          <Styled.Button type="submit">Find</Styled.Button>
         </Styled.Form>
       </Container>
     </Styled.Section>

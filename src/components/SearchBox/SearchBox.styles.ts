@@ -33,3 +33,8 @@ export const Input = styled.input`
     border: 2px solid ${colors.backgroundColorLighter};
   }
 `;
+
+export const Button = styled.button`
+  border: 2px solid ${colors.backgroundColor};
+  background-color: ${colors.logoGrey};
+`;
