@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Nav, SearchBox } from "components";
+import { Nav } from "components";
 
 type Props = {
   children: ReactNode;
@@ -10,7 +10,6 @@ export const MainLayout = ({ children }: Props) => {
   return (
     <>
       <Nav />
-      <SearchBox />
       {children}
     </>
   );

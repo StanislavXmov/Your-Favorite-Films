@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import { MainLayout } from "components";
+import { Home } from "pages";
+
 import "./App.css";
 
 function App() {
@@ -10,7 +13,7 @@ function App() {
           <p>Favorites</p>
         </Route>
         <Route path="/" exact>
-          <p>Home</p>
+          <Home />
         </Route>
       </MainLayout>
     </Router>
