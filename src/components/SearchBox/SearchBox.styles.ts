@@ -54,4 +54,10 @@ export const Button = styled.button`
     border: 2px solid ${colors.backgroundColorLighter};
     color: ${colors.fontColorLightDark};
   }
+
+  &:disabled {
+    border: 2px solid ${colors.fontColorLightDark};
+    color: ${colors.fontColorLightDark};
+    cursor: not-allowed;
+  }
 `;
