@@ -13,14 +13,13 @@ export const Form = styled.form`
 export const Label = styled.label`
   font-weight: bold;
   font-size: 18px;
-  color: black;
+  color: ${colors.fontColorDark};
 `;
 export const Input = styled.input`
   box-sizing: border-box;
-  background-color: var(--search-box-bg, white);
   border: 2px solid ${colors.backgroundColor};
   border-radius: 10px;
-  color: black;
+  color: ${colors.fontColorDark};
   font-size: 16px;
   height: 100%;
   outline: none;
@@ -36,5 +35,23 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   border: 2px solid ${colors.backgroundColor};
-  background-color: ${colors.logoGrey};
+  background-color: ${colors.fontColorLight};
+  box-sizing: border-box;
+  border: 2px solid ${colors.backgroundColor};
+  border-radius: 10px;
+  color: ${colors.fontColorDark};
+  font-size: 16px;
+  font-weight: bold;
+  height: 100%;
+  outline: none;
+  margin-left: 10px;
+  padding: 10px;
+  cursor: pointer;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border: 2px solid ${colors.backgroundColorLighter};
+    color: ${colors.fontColorLightDark};
+  }
 `;
