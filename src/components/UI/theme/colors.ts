@@ -6,4 +6,6 @@ export const colors = {
   logoYellow: "#FFD66B",
   logoOrange: "#FF9D72",
   fontColorLight: "#fff",
+  fontColorDark: "#000",
+  fontColorLightDark: "#5c5c5c",
 };
