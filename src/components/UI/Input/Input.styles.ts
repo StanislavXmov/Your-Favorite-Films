@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { colors, breakpoints } from "components/UI";
+import { colors, breakpoints, fontSizes } from "components/UI";
 
 export const Input = styled.input`
   box-sizing: border-box;
   border: 2px solid ${colors.backgroundColor};
   border-radius: 10px;
   color: ${colors.fontColorDark};
-  font-size: 16px;
+  font-size: ${fontSizes.small};
   height: 100%;
   outline: none;
   padding: 10px;

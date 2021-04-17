@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { colors, breakpoints } from "components/UI";
+import { colors, breakpoints, fontSizes } from "components/UI";
 
 export const Label = styled.label`
   font-weight: bold;
-  font-size: 18px;
+  font-size: ${fontSizes.middle};
   color: ${colors.fontColorDark};
 
   @media (max-width: ${breakpoints.tablet}) {

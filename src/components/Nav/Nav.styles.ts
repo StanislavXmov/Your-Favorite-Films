@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { ReactNode } from "react";
-import { colors } from "../UI";
+import { colors, fontSizes } from "../UI";
 
 export const Navigation = styled.nav`
   background-color: ${colors.backgroundColor};
@@ -70,5 +70,5 @@ export const Item = styled.li`
 export const ItemLink = styled.a`
   color: ${colors.fontColorLight};
   text-decoration: none;
-  font-size: 18px;
+  font-size: ${fontSizes.middle};
 `;
