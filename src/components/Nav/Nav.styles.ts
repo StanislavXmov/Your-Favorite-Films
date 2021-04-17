@@ -29,14 +29,16 @@ function getListResponsiveStyles(isListOpen: boolean) {
   if (isListOpen) {
     return css`
       position: absolute;
-      top: -3px;
-      left: -3px;
-      width: 66%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
       grid-auto-flow: row;
       padding: 16px;
       background-color: ${colors.backgroundColorLighter};
       border: 3px solid black;
       border-radius: 6px;
+      z-index: 10;
       & a {
         color: ${colors.fontColorLight};
         font-weight: bold;
