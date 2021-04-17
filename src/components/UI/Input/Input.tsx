@@ -7,11 +7,13 @@ type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type: string;
   placeholder: string;
+  id: string;
 };
 
-export const Input = ({ onChange, placeholder, value, type }: Props) => {
+export const Input = ({ id, onChange, placeholder, value, type }: Props) => {
   return (
     <Styled.Input
+      id={id}
       onChange={onChange}
       placeholder={placeholder}
       value={value}

@@ -17,8 +17,9 @@ export const SearchBox = () => {
     <Styled.Section>
       <Container>
         <Styled.Form onSubmit={(event) => submitHandler(event)}>
-          <Label title="Search Film" />
+          <Label id="title" title="Search Film" />
           <Input
+            id="title"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             type="text"
