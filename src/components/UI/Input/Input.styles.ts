@@ -7,11 +7,9 @@ export const Input = styled.input`
   border-radius: 10px;
   color: ${colors.fontColorDark};
   font-size: ${fontSizes.small};
-  height: 100%;
   outline: none;
   padding: 10px;
   position: relative;
-  width: 80%;
 
   &:focus,
   &:active {
@@ -21,5 +19,14 @@ export const Input = styled.input`
   @media (max-width: ${breakpoints.mobile}) {
     width: 100%;
     margin-bottom: 10px;
+  }
+`;
+
+export const SearchInput = styled(Input)`
+  height: 100%;
+  width: 80%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 70%;
   }
 `;
