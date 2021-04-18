@@ -5,7 +5,7 @@ import * as Styled from "./Input.styles";
 type Props = {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  type: string;
+  type: "text" | "email" | "password";
   placeholder: string;
   id: string;
 };
