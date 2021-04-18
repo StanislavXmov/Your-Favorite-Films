@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Container } from "components";
-import { Label, Input, Button } from "components/UI";
+import { Label, Input, SearchButton } from "components/UI";
 
 import * as Styled from "./SearchBox.styles";
 
@@ -25,7 +25,7 @@ export const SearchBox = () => {
             type="text"
             placeholder="Enter film title"
           />
-          <Button isDisabled={!title} type="submit" title="Search" />
+          <SearchButton isDisabled={!title} type="submit" title="Search" />
         </Styled.Form>
       </Container>
     </Styled.Section>

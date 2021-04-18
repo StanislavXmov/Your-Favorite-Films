@@ -10,9 +10,7 @@ export const Button = styled.button`
   color: ${colors.fontColorDark};
   font-size: ${fontSizes.small};
   font-weight: bold;
-  height: 100%;
   outline: none;
-  margin-left: 10px;
   padding: 10px;
   cursor: pointer;
 
@@ -32,4 +30,8 @@ export const Button = styled.button`
   @media (max-width: ${breakpoints.mobile}) {
     width: 40%;
   }
+`;
+
+export const SearchButton = styled(Button)`
+  margin-left: 10px;
 `;
