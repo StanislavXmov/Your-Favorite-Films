@@ -10,7 +10,8 @@ type Props = {
   id: string;
 };
 
-export const Input = ({ id, onChange, placeholder, value, type }: Props) => {
+export const Input = (props: Props) => {
+  const { id, onChange, placeholder, value, type } = props;
   return (
     <Styled.Input
       id={id}
