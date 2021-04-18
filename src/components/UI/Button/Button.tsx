@@ -1,14 +1,14 @@
 import * as Styled from "./Button.styles";
 
 type Props = {
-  disabled: boolean;
+  isDisabled: boolean;
   type: "submit" | "button";
   title: string;
 };
 
-export const Button = ({ disabled, title, type }: Props) => {
+export const Button = ({ isDisabled, title, type }: Props) => {
   return (
-    <Styled.Button disabled={disabled} type={type}>
+    <Styled.Button disabled={isDisabled} type={type}>
       {title}
     </Styled.Button>
   );

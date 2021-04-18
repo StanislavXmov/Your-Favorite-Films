@@ -25,7 +25,7 @@ export const SearchBox = () => {
             type="text"
             placeholder="Enter film title"
           />
-          <Button disabled={!title} type="submit" title="Search" />
+          <Button isDisabled={!title} type="submit" title="Search" />
         </Styled.Form>
       </Container>
     </Styled.Section>
