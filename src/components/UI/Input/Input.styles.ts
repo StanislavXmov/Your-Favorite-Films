@@ -21,12 +21,3 @@ export const InputBasic = styled.input`
     margin-bottom: 10px;
   }
 `;
-
-export const SearchInput = styled(InputBasic)`
-  height: 100%;
-  width: 80%;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70%;
-  }
-`;
