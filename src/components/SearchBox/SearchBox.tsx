@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { css } from "@emotion/react";
 
 import { Container } from "components";
 import { Label, Button } from "components/UI";
+import { searchFilms } from "store/";
 
 import * as Styled from "./SearchBox.styles";
 
 export const SearchBox = () => {
   const [title, setTitle] = useState("");
+  const dispatch = useDispatch();
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (title.trim()) {
-      console.log(title);
+      dispatch(searchFilms(title));
     }
   };
   return (
