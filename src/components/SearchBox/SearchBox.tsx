@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Container } from "components";
-import { Label, SearchInput, SearchButton } from "components/UI";
+import { Label, SearchButton } from "components/UI";
 
 import * as Styled from "./SearchBox.styles";
 
@@ -18,7 +18,7 @@ export const SearchBox = () => {
       <Container>
         <Styled.Form onSubmit={(event) => submitHandler(event)}>
           <Label id="title" title="Search Film" />
-          <SearchInput
+          <Styled.SearchInput
             id="title"
             value={title}
             onChange={(event) => setTitle(event.target.value)}

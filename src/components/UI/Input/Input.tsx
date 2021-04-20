@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Styled from "./Input.styles";
 
-type Props = {
+export type InputProps = {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type: "text" | "email" | "password";
@@ -10,10 +10,10 @@ type Props = {
   id: string;
 };
 
-export const Input = (props: Props) => {
+export const Input = (props: InputProps) => {
   const { id, onChange, placeholder, value, type } = props;
   return (
-    <Styled.Input
+    <Styled.InputBasic
       id={id}
       onChange={onChange}
       placeholder={placeholder}

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, breakpoints } from "components/UI";
+import { InputBasic, colors, breakpoints, InputProps } from "components/UI";
 
 export const Section = styled.section`
   padding: 16px;
@@ -16,5 +16,14 @@ export const Form = styled.form`
 
   @media (max-width: ${breakpoints.tablet}) {
     flex-wrap: wrap;
+  }
+`;
+
+export const SearchInput = styled(InputBasic)<InputProps>`
+  height: 100%;
+  width: 80%;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 70%;
   }
 `;

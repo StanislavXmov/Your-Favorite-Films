@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { colors, breakpoints, fontSizes } from "components/UI";
 
-export const Input = styled.input`
+export const InputBasic = styled.input`
   box-sizing: border-box;
   border: 2px solid ${colors.backgroundColor};
   border-radius: 10px;
@@ -22,7 +22,7 @@ export const Input = styled.input`
   }
 `;
 
-export const SearchInput = styled(Input)`
+export const SearchInput = styled(InputBasic)`
   height: 100%;
   width: 80%;
 
