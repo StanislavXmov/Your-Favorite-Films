@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { css } from "@emotion/react";
 
 import { Container } from "components";
 import { Label, Button } from "components/UI";
@@ -25,7 +26,14 @@ export const SearchBox = () => {
             type="text"
             placeholder="Enter film title"
           />
-          <Button isDisabled={!title} type="submit" title="Search" />
+          <Button
+            css={css`
+              margin-left: 10px;
+            `}
+            isDisabled={!title}
+            type="submit"
+            title="Search"
+          />
         </Styled.Form>
       </Container>
     </Styled.Section>

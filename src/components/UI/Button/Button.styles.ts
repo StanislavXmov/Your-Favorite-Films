@@ -1,7 +1,13 @@
+import { SerializedStyles } from "@emotion/react";
 import styled from "@emotion/styled";
 import { colors, breakpoints, fontSizes } from "components/UI";
 
-export const Button = styled.button`
+type ButtonProps = {
+  css?: SerializedStyles;
+};
+
+export const Button = styled.button<ButtonProps>`
+  margin: 0;
   border: 2px solid ${colors.backgroundColor};
   background-color: ${colors.fontColorLight};
   box-sizing: border-box;
@@ -13,6 +19,7 @@ export const Button = styled.button`
   outline: none;
   padding: 10px;
   cursor: pointer;
+  ${(props) => props.css}
 
   &:focus,
   &:active,
