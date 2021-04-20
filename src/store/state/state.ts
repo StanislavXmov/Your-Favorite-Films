@@ -1,5 +1,3 @@
-export type Title = string;
-
 export type SearchState = {
   films: any[];
 };
