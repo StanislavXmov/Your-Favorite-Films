@@ -1,2 +1,2 @@
 export { initialState } from "./state";
-export type { SearchState } from "./state";
+export type { SearchState, ResponseApi, ResponseError, Film } from "./state";

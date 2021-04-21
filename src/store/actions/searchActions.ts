@@ -1,4 +1,7 @@
 import axios from "axios";
+import { Dispatch } from "redux";
+
+import { ResponseApi, ResponseError } from "../state";
 
 // eslint-disable-next-line no-shadow
 export enum SearchAction {
@@ -11,25 +14,37 @@ type SearchFilmsRequestAction = {
   type: SearchAction.SearchFilmsRequest;
 };
 
-type SearchFilmsSuccessAction = {
-  type: SearchAction.SearchFilmsSuccess;
-  payload: any;
+type SearchFilmsFailAction = {
+  type: SearchAction.SearchFilmsFail;
+  payload: ResponseError;
 };
 
-export type SearchActions = SearchFilmsSuccessAction;
+type SearchFilmsSuccessAction = {
+  type: SearchAction.SearchFilmsSuccess;
+  payload: ResponseApi;
+};
+
+export type SearchActions =
+  | SearchFilmsSuccessAction
+  | SearchFilmsRequestAction
+  | SearchFilmsFailAction;
 
 export const searchFilms = (title: string) => async (
-  dispatch: (arg0: { type: SearchAction; payload: any }) => void
+  dispatch: Dispatch<SearchActions>
 ) => {
   try {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=81c24c6eaa51bc05ca0c4647f08f9289&page=1&query=${title}`
+    dispatch({ type: SearchAction.SearchFilmsRequest });
+    const { data } = await axios.get<ResponseApi>(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=1&query=${title}`
     );
     dispatch({
       type: SearchAction.SearchFilmsSuccess,
       payload: data,
     });
   } catch (error) {
-    console.log(error);
+    dispatch({
+      type: SearchAction.SearchFilmsFail,
+      payload: error.message,
+    });
   }
 };
