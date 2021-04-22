@@ -4,12 +4,12 @@ import * as Styled from "./Loader.styles";
 export const Loader = () => {
   return (
     <Styled.LoaderWraper>
-      <svg viewBox="0 0 133 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 131 109" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle
           css={Styled.createCircleAnimationStyle("circleOne", 307, 2)}
           cx="65.5"
           cy="54.5"
-          r="49"
+          r="48.5"
           stroke="#FF9D72"
           strokeWidth="4"
         />
@@ -17,7 +17,7 @@ export const Loader = () => {
           css={Styled.createCircleAnimationStyle("circleTwo", 282, 2.4)}
           cx="65.5"
           cy="54.5"
-          r="45"
+          r="44.5"
           stroke="#F4F4F4"
           strokeWidth="4"
         />
@@ -25,7 +25,7 @@ export const Loader = () => {
           css={Styled.createCircleAnimationStyle("circleThree", 332, 2.2)}
           cx="65.5"
           cy="54.5"
-          r="53"
+          r="52.5"
           stroke="#FFD66B"
           strokeWidth="4"
         />
@@ -39,7 +39,7 @@ export const Loader = () => {
           stroke="black"
         />
         <rect
-          x="90.5"
+          x="88.5"
           y="33.5"
           width="42"
           height="42"
@@ -57,7 +57,7 @@ export const Loader = () => {
           stroke="black"
         />
         <path
-          d="M117.468 58.2775H108.917L107.09 72H100L104.678 37H122L121.196 43.0132H110.963L109.648 52.5727H118.199L117.468 58.2775Z"
+          d="M115.468 58.2775H106.917L105.09 72H98L102.678 37H120L119.196 43.0132H108.963L107.648 52.5727H116.199L115.468 58.2775Z"
           fill="black"
         />
         <path
