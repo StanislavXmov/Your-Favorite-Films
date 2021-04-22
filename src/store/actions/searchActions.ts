@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 
+import { parser } from "../../utils";
 import { ResponseApi, ResponseError } from "../state";
 
 // eslint-disable-next-line no-shadow
@@ -37,9 +38,10 @@ export const searchFilms = (title: string) => async (
     const { data } = await axios.get<ResponseApi>(
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=1&query=${title}`
     );
+    const response = parser(data);
     dispatch({
       type: SearchAction.SearchFilmsSuccess,
-      payload: data,
+      payload: response,
     });
   } catch (error) {
     dispatch({
