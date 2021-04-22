@@ -1,38 +1,33 @@
+/** @jsxImportSource @emotion/react */
 import * as Styled from "./Loader.styles";
 
 export const Loader = () => {
   return (
     <Styled.LoaderWraper>
-      <svg
-        width="133"
-        height="109"
-        viewBox="0 0 133 109"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 133 109" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle
-          className="circle_one"
+          css={Styled.createCircleAnimationStyle("circleOne", 307, 2)}
           cx="65.5"
           cy="54.5"
           r="49"
           stroke="#FF9D72"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <circle
-          className="circle_two"
+          css={Styled.createCircleAnimationStyle("circleTwo", 282, 2.4)}
           cx="65.5"
           cy="54.5"
           r="45"
           stroke="#F4F4F4"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <circle
-          className="circle_three"
+          css={Styled.createCircleAnimationStyle("circleThree", 332, 2.2)}
           cx="65.5"
           cy="54.5"
           r="53"
           stroke="#FFD66B"
-          stroke-width="4"
+          strokeWidth="4"
         />
         <rect
           x="0.5"
