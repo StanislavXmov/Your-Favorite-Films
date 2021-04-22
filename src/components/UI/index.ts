@@ -5,3 +5,4 @@ export { Input, InputBasic } from "./Input";
 export type { InputProps } from "./Input";
 export { Button } from "./Button";
 export { Label } from "./Label";
+export { Loader } from "./Loader";
