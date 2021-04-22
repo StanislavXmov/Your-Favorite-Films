@@ -10,8 +10,7 @@ export const Home = () => {
   return (
     <>
       <SearchBox />
-      <Loader />
-      {loading && <h2>Loading</h2>}
+      {loading && <Loader />}
       {films && films.map((f) => <p key={f.id}>{f.title}</p>)}
     </>
   );
