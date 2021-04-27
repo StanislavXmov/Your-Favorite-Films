@@ -30,13 +30,18 @@ export type SearchActions =
   | SearchFilmsRequestAction
   | SearchFilmsFailAction;
 
+const apiUrl = "https://api.themoviedb.org/3/search/movie";
+const apiKey = `?api_key=${process.env.REACT_APP_API_KEY}`;
+const pageQuery = "&page=1";
+const query = "&query=";
+
 export const searchFilms = (title: string) => async (
   dispatch: Dispatch<SearchActions>
 ) => {
   try {
     dispatch({ type: SearchAction.SearchFilmsRequest });
     const { data } = await axios.get<ResponseApi>(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&page=1&query=${title}`
+      `${apiUrl}${apiKey}${pageQuery}${query}${title}`
     );
     const response = apiResponseParser(data);
     dispatch({
