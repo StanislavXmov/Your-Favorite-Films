@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export type SearchState = {
   films: Film[];
   searchResponse?: ResponseApi;
