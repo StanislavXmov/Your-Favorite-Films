@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { InputBasic, colors, breakpoints, InputProps } from "components/UI";
 
@@ -26,4 +27,8 @@ export const SearchInput = styled(InputBasic)<InputProps>`
   @media (max-width: ${breakpoints.tablet}) {
     width: 70%;
   }
+`;
+
+export const ButtonMargin = css`
+  margin-left: 10px;
 `;

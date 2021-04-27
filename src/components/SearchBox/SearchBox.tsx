@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { css } from "@emotion/react";
 
 import { Container } from "components";
 import { Label, Button } from "components/UI";
@@ -13,7 +12,8 @@ export const SearchBox = () => {
   const dispatch = useDispatch();
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (title.trim()) {
+    const isTitle = title.trim();
+    if (isTitle) {
       dispatch(searchFilms(title));
     }
   };
@@ -30,9 +30,7 @@ export const SearchBox = () => {
             placeholder="Enter film title"
           />
           <Button
-            css={css`
-              margin-left: 10px;
-            `}
+            css={Styled.ButtonMargin}
             isDisabled={!title}
             type="submit"
             title="Search"
