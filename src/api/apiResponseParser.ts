@@ -6,7 +6,7 @@ const capitalize = (str: string) => {
 
 const trasformToCamelCase = (key: string): string => {
   const keyArray = key.split("_");
-  for (let i = 1; i < keyArray.length; i = +1) {
+  for (let i = 1; i < keyArray.length; i += 1) {
     keyArray[i] = capitalize(keyArray[1]);
   }
   return keyArray.join("");
