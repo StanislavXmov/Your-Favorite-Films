@@ -8,13 +8,13 @@ import { searchFilms } from "store/";
 import * as Styled from "./SearchBox.styles";
 
 export const SearchBox = () => {
-  const [title, setTitle] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const isTitle = title.trim();
-    if (isTitle) {
-      dispatch(searchFilms(title));
+    const isSearchQueryEmpty = searchQuery.trim();
+    if (isSearchQueryEmpty) {
+      dispatch(searchFilms(searchQuery));
     }
   };
   return (
@@ -24,14 +24,14 @@ export const SearchBox = () => {
           <Label id="title" title="Search Film" />
           <Styled.SearchInput
             id="title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
             type="text"
             placeholder="Enter film title"
           />
           <Button
             css={Styled.SearchButtonStyle}
-            isDisabled={!title}
+            isDisabled={!searchQuery}
             type="submit"
             title="Search"
           />
