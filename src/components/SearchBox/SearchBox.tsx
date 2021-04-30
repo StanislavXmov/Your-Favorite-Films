@@ -30,7 +30,7 @@ export const SearchBox = () => {
             placeholder="Enter film title"
           />
           <Button
-            css={Styled.ButtonMargin}
+            css={Styled.SearchButtonStyle}
             isDisabled={!title}
             type="submit"
             title="Search"

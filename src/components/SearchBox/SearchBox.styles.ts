@@ -29,6 +29,6 @@ export const SearchInput = styled(InputBasic)<InputProps>`
   }
 `;
 
-export const ButtonMargin = css`
+export const SearchButtonStyle = css`
   margin-left: 10px;
 `;
