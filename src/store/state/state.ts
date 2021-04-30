@@ -2,7 +2,7 @@ import { SearchState } from "./types";
 
 export const initialState: SearchState = {
   films: [],
-  searchResponse: undefined,
+  searchResponse: null,
   loading: false,
-  error: undefined,
+  error: null,
 };

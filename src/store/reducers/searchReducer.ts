@@ -10,8 +10,7 @@ export function search(
       return {
         ...state,
         loading: true,
-        films: [],
-        searchResponse: undefined,
+        searchResponse: null,
       };
     case SearchAction.SearchFilmsSuccess:
       return {
@@ -24,7 +23,7 @@ export function search(
       return {
         loading: false,
         films: [],
-        searchResponse: undefined,
+        searchResponse: null,
         error: action.payload,
       };
 

@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 export type SearchState = {
   films: Film[];
-  searchResponse?: ResponseApi;
-  error?: ResponseError;
+  searchResponse: ResponseApi | null;
+  error: ResponseError | null;
   loading: boolean;
 };
 
