@@ -1,4 +1,4 @@
-import { SearchState } from "./type";
+import { SearchState } from "./types";
 
 export const initialState: SearchState = {
   films: [],
