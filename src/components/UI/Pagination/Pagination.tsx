@@ -11,6 +11,11 @@ type Props = {
 };
 
 export const Pagination = ({ current, pages, changePage }: Props) => {
+  const pageClickHandler = (page: number) => {
+    window.scrollTo(0, 0);
+    changePage(page);
+  };
+
   return (
     <Styled.Pagination>
       {/* <Button title={"1"} type="button" isDisabled={false} /> */}
@@ -21,7 +26,7 @@ export const Pagination = ({ current, pages, changePage }: Props) => {
           title={`${p + 1}`}
           type="button"
           isDisabled={false}
-          onClick={() => changePage(p)}
+          onClick={() => pageClickHandler(p)}
         />
       ))}
     </Styled.Pagination>
