@@ -19,17 +19,20 @@ export const Button = styled.button<ButtonProps>`
   outline: none;
   padding: 10px;
   cursor: pointer;
+  transition: all 0.2s ease-out;
   ${(props) => props.css}
 
   &:focus,
   &:active,
   &:hover {
-    border: 2px solid ${colors.backgroundColorLighter};
-    color: ${colors.fontColorLightDark};
+    border: 2px solid ${colors.logoGrey};
+    background-color: ${colors.backgroundColorLighter};
+    color: ${colors.fontColorLight};
   }
 
   &:disabled {
     border: 2px solid ${colors.fontColorLightDark};
+    background-color: ${colors.fontColorLight};
     color: ${colors.fontColorLightDark};
     cursor: not-allowed;
   }
