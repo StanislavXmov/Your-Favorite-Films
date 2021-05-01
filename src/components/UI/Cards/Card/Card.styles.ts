@@ -12,6 +12,10 @@ export const Card = styled.div`
   color: ${colors.fontColorDark};
   border: 3px solid black;
   border-radius: 6px;
+
+  svg {
+    margin: 0 auto;
+  }
   @media (min-width: ${breakpoints.laptop}) {
     width: 24%;
   }
