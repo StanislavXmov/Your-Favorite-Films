@@ -16,7 +16,7 @@ export const Card = styled.div`
     width: 24%;
   }
   @media (max-width: ${breakpoints.tablet}) {
-    width: 40%;
+    width: 70%;
     margin: 5px;
     justify-content: space-between;
   }
