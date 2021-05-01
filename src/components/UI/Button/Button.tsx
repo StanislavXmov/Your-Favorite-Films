@@ -6,11 +6,17 @@ type Props = {
   isDisabled: boolean;
   type: "submit" | "button";
   title: string;
+  onClick?: () => void;
 };
 
-export const Button = ({ css, isDisabled, title, type }: Props) => {
+export const Button = ({ css, isDisabled, title, type, onClick }: Props) => {
   return (
-    <Styled.Button css={css} disabled={isDisabled} type={type}>
+    <Styled.Button
+      css={css}
+      disabled={isDisabled}
+      type={type}
+      onClick={onClick}
+    >
       {title}
     </Styled.Button>
   );
