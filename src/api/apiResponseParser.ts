@@ -11,7 +11,7 @@ const trasformToCamelCase = (key: string): string => {
   }
   return keyArray.join("");
 };
-
+// Parse API response from snake case to camel case
 export const apiResponseParser = (data: {
   [key: string]: unknown;
 }): ResponseApi => {
