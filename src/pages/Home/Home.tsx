@@ -3,9 +3,9 @@ import { useSelector, TypedUseSelectorHook } from "react-redux";
 
 import { RootState } from "index";
 import { apiImageUrl } from "api";
-import { getRange } from "utils";
 import { SearchBox, Container } from "components";
 import { Loader, Card, CardsWrapper, Pagination } from "components/UI";
+import { getPaginationRange } from "components/UI/Pagination/utils";
 
 const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -16,7 +16,7 @@ export const Home = () => {
 
   const limit = 9;
   const pageCount = Math.ceil(films.length / limit);
-  const pages = getRange(0, pageCount);
+  const pages = getPaginationRange(0, pageCount);
 
   return (
     <>
