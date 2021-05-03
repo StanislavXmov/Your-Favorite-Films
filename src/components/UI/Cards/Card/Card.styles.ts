@@ -12,7 +12,7 @@ export const Card = styled.div`
   padding: 10px;
   background-color: ${colors.logoGrey};
   color: ${colors.fontColorDark};
-  border: 3px solid black;
+  border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
 
   svg {
