@@ -17,4 +17,8 @@ export const Container = styled.div`
   @media (min-width: ${breakpoints.laptop}) {
     max-width: 1140px;
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 0;
+  }
 `;

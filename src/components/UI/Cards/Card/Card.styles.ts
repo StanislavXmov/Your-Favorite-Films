@@ -21,7 +21,7 @@ export const Card = styled.div`
   }
   @media (max-width: ${breakpoints.tablet}) {
     width: 70%;
-    margin: 5px;
+    gap: 10px;
     justify-content: space-between;
   }
   @media (max-width: ${breakpoints.mobile}) {

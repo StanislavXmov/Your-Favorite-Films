@@ -27,6 +27,10 @@ export const SearchInput = styled(InputBasic)<InputProps>`
   @media (max-width: ${breakpoints.tablet}) {
     width: 70%;
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+  }
 `;
 
 export const SearchButtonStyle = css`
