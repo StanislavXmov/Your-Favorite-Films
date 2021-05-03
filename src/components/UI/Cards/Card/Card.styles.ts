@@ -3,9 +3,9 @@ import { breakpoints, colors } from "components/UI";
 
 export const Card = styled.div`
   width: 40%;
-  margin: 10px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: space-between;
   padding: 10px;
   background-color: ${colors.logoGrey};

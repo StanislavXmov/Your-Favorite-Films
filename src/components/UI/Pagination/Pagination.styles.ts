@@ -4,6 +4,7 @@ import { colors } from "components/UI";
 
 export const Pagination = styled.div`
   width: 100%;
+  margin-bottom: 26px;
   display: flex;
   justify-content: center;
 `;
