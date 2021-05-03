@@ -3,22 +3,28 @@ import React from "react";
 import { Button } from "components/UI";
 
 import * as Styled from "./Pagination.styles";
+import { getPaginationRange } from "./utils";
 
 type Props = {
   currentPage: number;
-  pages: number[];
-  changePage: React.Dispatch<React.SetStateAction<number>>;
+  maxPageAmount: number;
+  onChangePage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const Pagination = ({ currentPage, pages, changePage }: Props) => {
+export const Pagination = ({
+  currentPage,
+  maxPageAmount,
+  onChangePage,
+}: Props) => {
+  const pageNumbersArray = getPaginationRange(0, maxPageAmount);
   const pageClickHandler = (page: number) => {
     window.scrollTo(0, 0);
-    changePage(page);
+    onChangePage(page);
   };
 
   return (
     <Styled.Pagination>
-      {pages.map((pageNumber, pageIndex) => (
+      {pageNumbersArray.map((pageNumber, pageIndex) => (
         <Button
           css={Styled.setPaginationButtonStyle(currentPage, pageNumber)}
           key={pageNumber}

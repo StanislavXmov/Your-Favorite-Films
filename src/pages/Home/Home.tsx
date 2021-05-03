@@ -5,42 +5,43 @@ import { RootState } from "index";
 import { apiImageUrl } from "api";
 import { SearchBox, Container } from "components";
 import { Loader, Card, CardsWrapper, Pagination } from "components/UI";
-import { getPaginationRange } from "components/UI/Pagination/utils";
 
 const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
+const CARDS_PER_PAGE = 9;
+
 export const Home = () => {
   const { loading, films } = useTypeSelector((state) => state.search);
-
   const [currentPage, setCurrentPage] = useState(0);
+  const pagesAmountInPagination = Math.ceil(films.length / CARDS_PER_PAGE);
 
-  const limit = 9;
-  const pageCount = Math.ceil(films.length / limit);
-  const pages = getPaginationRange(0, pageCount);
+  const renderFilmsCards = () => {
+    return films
+      .slice(
+        currentPage * CARDS_PER_PAGE,
+        currentPage * CARDS_PER_PAGE + CARDS_PER_PAGE
+      )
+      .map(({ id, title, posterPath, overview }) => (
+        <Card
+          key={id}
+          id={id}
+          title={title}
+          imgSrc={apiImageUrl(posterPath)}
+          description={overview}
+        />
+      ));
+  };
 
   return (
     <>
       <SearchBox />
       {loading && <Loader />}
       <Container>
-        <CardsWrapper>
-          {films &&
-            films
-              .slice(currentPage * limit, currentPage * limit + limit)
-              .map((f) => (
-                <Card
-                  key={f.id}
-                  id={f.id}
-                  title={f.title}
-                  imgSrc={apiImageUrl(f.posterPath)}
-                  description={f.overview}
-                />
-              ))}
-        </CardsWrapper>
+        <CardsWrapper>{films && renderFilmsCards()}</CardsWrapper>
         {films && (
           <Pagination
-            changePage={setCurrentPage}
-            pages={pages}
+            onChangePage={setCurrentPage}
+            maxPageAmount={pagesAmountInPagination}
             currentPage={currentPage}
           />
         )}
