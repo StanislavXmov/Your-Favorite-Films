@@ -10,8 +10,16 @@ type Props = {
   description: string;
 };
 
+const MAX_DESCRIPTION_LENGTH = 200;
+
 export const Card = (props: Props) => {
   const { id, title, imgSrc, description } = props;
+  const getTrimDescription = (string: string) => {
+    if (string.length > MAX_DESCRIPTION_LENGTH) {
+      return `${string.substr(0, MAX_DESCRIPTION_LENGTH)}...`;
+    }
+    return string;
+  };
   return (
     <Styled.Card>
       {imgSrc !== null ? (
@@ -20,11 +28,7 @@ export const Card = (props: Props) => {
         <CardImagePlaceholder />
       )}
       <Styled.CardTitle>{title}</Styled.CardTitle>
-      <Styled.CardDesc>
-        {description.length > 200
-          ? `${description.substr(0, 200)}...`
-          : description}
-      </Styled.CardDesc>
+      <Styled.CardDesc>{getTrimDescription(description)}</Styled.CardDesc>
       <Button
         css={Styled.CardButtonStyle}
         title="Open"
