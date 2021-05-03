@@ -41,7 +41,7 @@ export const Home = () => {
           <Pagination
             changePage={setCurrentPage}
             pages={pages}
-            current={currentPage}
+            currentPage={currentPage}
           />
         )}
       </Container>
