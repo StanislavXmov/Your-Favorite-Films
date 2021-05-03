@@ -18,7 +18,7 @@ export const SearchBox = () => {
     }
   };
   return (
-    <Styled.Section>
+    <Styled.SearchWrapper>
       <Container>
         <Styled.Form onSubmit={(event) => submitHandler(event)}>
           <Label id="title" title="Search Film" />
@@ -37,6 +37,6 @@ export const SearchBox = () => {
           />
         </Styled.Form>
       </Container>
-    </Styled.Section>
+    </Styled.SearchWrapper>
   );
 };

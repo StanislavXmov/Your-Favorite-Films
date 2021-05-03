@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { InputBasic, colors, breakpoints, InputProps } from "components/UI";
 
-export const Section = styled.section`
+export const SearchWrapper = styled.div`
   padding: 16px;
   background-color: ${colors.logoGrey};
 `;
