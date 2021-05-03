@@ -16,6 +16,7 @@ export const Card = styled.div`
   border-radius: 6px;
 
   svg {
+    height: 300px;
     margin: 0 auto;
   }
   @media (min-width: ${breakpoints.laptop}) {
