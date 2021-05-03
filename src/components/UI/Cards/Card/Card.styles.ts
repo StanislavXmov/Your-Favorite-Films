@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
 import { breakpoints, colors } from "components/UI";
 
 export const Card = styled.div`
@@ -40,4 +42,18 @@ export const CardTitle = styled.h3`
 export const CardDesc = styled.p`
   margin: 4px 0;
   color: ${colors.fontColorDark};
+`;
+
+export const CardButtonStyle = css`
+  &:focus,
+  &:active {
+    border: 2px solid ${colors.backgroundColor};
+    background-color: ${colors.fontColorLight};
+    color: ${colors.fontColorDark};
+  }
+  &:hover {
+    border: 2px solid ${colors.logoGrey};
+    background-color: ${colors.backgroundColorLighter};
+    color: ${colors.fontColorLight};
+  }
 `;

@@ -20,7 +20,6 @@ export const Button = styled.button<ButtonProps>`
   padding: 10px;
   cursor: pointer;
   transition: all 0.2s ease-out;
-  ${(props) => props.css}
 
   &:focus,
   &:active,
@@ -29,6 +28,8 @@ export const Button = styled.button<ButtonProps>`
     background-color: ${colors.backgroundColorLighter};
     color: ${colors.fontColorLight};
   }
+
+  ${(props) => props.css}
 
   &:disabled {
     border: 2px solid ${colors.fontColorLightDark};

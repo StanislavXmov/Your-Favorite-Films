@@ -22,7 +22,7 @@ export const setPaginationButtonStyle = (current: number, page: number) => {
     &:active,
     &:hover {
       border: 2px solid ${colors.backgroundColorLighter};
-      color: ${page === current ? colors.fontColorLight : colors.fontColorDark};
+      color: ${colors.fontColorLight};
     }
   `;
 };

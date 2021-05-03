@@ -101,6 +101,7 @@ export const Card = (props: Props) => {
           : description}
       </Styled.CardDesc>
       <Button
+        css={Styled.CardButtonStyle}
         title="Open"
         isDisabled={false}
         type="button"
