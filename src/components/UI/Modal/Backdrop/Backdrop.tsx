@@ -3,9 +3,9 @@ import React from "react";
 import * as Styled from "./Backdrop.styles";
 
 type Props = {
-  children: React.ReactNode;
+  onCloseModalHandler: () => void;
 };
 
-export const Backdrop = () => {
-  return <Styled.Backdrop />;
+export const Backdrop = ({ onCloseModalHandler }: Props) => {
+  return <Styled.Backdrop onClick={onCloseModalHandler} />;
 };

@@ -5,6 +5,7 @@ import { RootState } from "index";
 import { apiImageUrl } from "api";
 import { SearchBox, Container } from "components";
 import { Loader, Card, CardsWrapper, Pagination, Modal } from "components/UI";
+import { Film } from "store/state";
 
 const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -13,6 +14,7 @@ const CARDS_PER_PAGE = 9;
 export const Home = () => {
   const { loading, films } = useTypeSelector((state) => state.search);
   const [currentPage, setCurrentPage] = useState(0);
+  const [selectedFilm, setSelectedFilm] = useState<null | Film>(null);
   const pagesAmountInPagination = Math.ceil(films.length / CARDS_PER_PAGE);
 
   const renderFilmsCards = () => {
@@ -21,23 +23,32 @@ export const Home = () => {
         currentPage * CARDS_PER_PAGE,
         currentPage * CARDS_PER_PAGE + CARDS_PER_PAGE
       )
-      .map(({ id, title, posterPath, overview }) => (
-        <Card
-          key={id}
-          id={id}
-          title={title}
-          imgSrc={apiImageUrl(posterPath)}
-          description={overview}
-        />
-      ));
+      .map((film) => {
+        const { id, title, posterPath, overview } = film;
+        return (
+          <Card
+            key={id}
+            id={id}
+            title={title}
+            imgSrc={apiImageUrl(posterPath)}
+            description={overview}
+            onSelectFilmHandler={() => setSelectedFilm(film)}
+          />
+        );
+      });
   };
 
   return (
     <>
       <SearchBox />
-      <Modal onClose={() => console.log("close")} open={true}>
-        {"Hello i am a modal window"}
-      </Modal>
+      {selectedFilm !== null && (
+        <Modal
+          isOpenModal={selectedFilm !== null}
+          onCloseModalHandler={() => setSelectedFilm(null)}
+        >
+          {selectedFilm && <h2>{selectedFilm.title}</h2>}
+        </Modal>
+      )}
       {loading && <Loader />}
       <Container>
         <CardsWrapper>{films && renderFilmsCards()}</CardsWrapper>

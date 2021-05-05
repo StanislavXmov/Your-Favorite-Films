@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import { Backdrop } from "./Backdrop";
@@ -6,16 +6,26 @@ import { Content } from "./Content";
 
 type Props = {
   children: React.ReactNode;
-  open: boolean;
-  onClose: () => void;
+  isOpenModal: boolean;
+  onCloseModalHandler: () => void;
 };
 
-export const Modal = ({ children, open, onClose }: Props) => {
+export const Modal = ({
+  children,
+  isOpenModal,
+  onCloseModalHandler,
+}: Props) => {
+  const [isOpen, setIsOpen] = useState(isOpenModal);
   return ReactDOM.createPortal(
     <>
-      {open && (
+      {isOpen && (
         <>
-          <Backdrop />
+          <Backdrop
+            onCloseModalHandler={() => {
+              onCloseModalHandler();
+              setIsOpen(false);
+            }}
+          />
           <Content>{children}</Content>
         </>
       )}

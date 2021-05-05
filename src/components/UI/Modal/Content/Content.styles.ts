@@ -1,17 +1,23 @@
 import styled from "@emotion/styled";
+import { colors } from "components/UI/theme";
 
 export const Content = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
   box-sizing: border-box;
   min-height: 50px;
   min-width: 50px;
   max-height: 80%;
   max-width: 80%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: white;
-  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: ${colors.logoGrey};
+  color: ${colors.fontColorDark};
+  border: 3px solid ${colors.fontColorDark};
+  border-radius: 6px;
 `;
