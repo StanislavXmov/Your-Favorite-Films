@@ -1,5 +1,4 @@
 import { Button } from "components/UI";
-import { Film } from "store/state";
 
 import * as Styled from "./Card.styles";
 import { CardImagePlaceholder } from "./CardImagePlaceholder";
@@ -15,7 +14,7 @@ type Props = {
 const MAX_DESCRIPTION_LENGTH = 200;
 
 export const Card = (props: Props) => {
-  const { id, title, imgSrc, description, onSelectFilmHandler } = props;
+  const { title, imgSrc, description, onSelectFilmHandler } = props;
   const getTrimDescription = (string: string) => {
     if (string.length > MAX_DESCRIPTION_LENGTH) {
       return `${string.substr(0, MAX_DESCRIPTION_LENGTH)}...`;
