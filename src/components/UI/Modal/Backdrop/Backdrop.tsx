@@ -2,6 +2,10 @@ import React from "react";
 
 import * as Styled from "./Backdrop.styles";
 
-export const Backdrop: React.FC = ({ children }) => {
-  return <Styled.Backdrop>{children}</Styled.Backdrop>;
+type Props = {
+  children: React.ReactNode;
+};
+
+export const Backdrop = () => {
+  return <Styled.Backdrop />;
 };

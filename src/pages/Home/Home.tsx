@@ -4,7 +4,7 @@ import { useSelector, TypedUseSelectorHook } from "react-redux";
 import { RootState } from "index";
 import { apiImageUrl } from "api";
 import { SearchBox, Container } from "components";
-import { Loader, Card, CardsWrapper, Pagination } from "components/UI";
+import { Loader, Card, CardsWrapper, Pagination, Modal } from "components/UI";
 
 const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -35,6 +35,9 @@ export const Home = () => {
   return (
     <>
       <SearchBox />
+      <Modal onClose={() => console.log("close")} open={true}>
+        {"Hello i am a modal window"}
+      </Modal>
       {loading && <Loader />}
       <Container>
         <CardsWrapper>{films && renderFilmsCards()}</CardsWrapper>
