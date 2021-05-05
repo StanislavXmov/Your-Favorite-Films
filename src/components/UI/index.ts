@@ -6,6 +6,6 @@ export type { InputProps } from "./Input";
 export { Button } from "./Button";
 export { Label } from "./Label";
 export { Loader } from "./Loader";
-export { Card, CardsWrapper } from "./Cards";
+export { Card, CardsWrapper, CardFilmInfo } from "./Cards";
 export { Pagination } from "./Pagination";
 export { Modal } from "./Modal";

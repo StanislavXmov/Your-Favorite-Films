@@ -11,7 +11,6 @@ export const Button = styled.button<ButtonProps>`
   border: 2px solid ${colors.backgroundColor};
   background-color: ${colors.fontColorLight};
   box-sizing: border-box;
-  border: 2px solid ${colors.backgroundColor};
   border-radius: 10px;
   color: ${colors.fontColorDark};
   font-size: ${fontSizes.small};

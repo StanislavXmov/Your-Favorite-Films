@@ -4,7 +4,14 @@ import { useSelector, TypedUseSelectorHook } from "react-redux";
 import { RootState } from "index";
 import { apiImageUrl } from "api";
 import { SearchBox, Container } from "components";
-import { Loader, Card, CardsWrapper, Pagination, Modal } from "components/UI";
+import {
+  Loader,
+  Card,
+  CardsWrapper,
+  Pagination,
+  Modal,
+  CardFilmInfo,
+} from "components/UI";
 import { Film } from "store/state";
 
 const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -46,7 +53,18 @@ export const Home = () => {
           isOpenModal={selectedFilm !== null}
           onCloseModalHandler={() => setSelectedFilm(null)}
         >
-          {selectedFilm && <h2>{selectedFilm.title}</h2>}
+          {selectedFilm && (
+            <CardFilmInfo
+              id={selectedFilm.id}
+              title={selectedFilm.title}
+              imgSrc={apiImageUrl(selectedFilm.posterPath)}
+              description={selectedFilm.overview}
+              date={selectedFilm.releaseDate}
+              rating={selectedFilm.voteAverage}
+              lang={selectedFilm.originalLanguage}
+              onCloseHandler={() => setSelectedFilm(null)}
+            />
+          )}
         </Modal>
       )}
       {loading && <Loader />}

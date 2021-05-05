@@ -1,0 +1,1 @@
+export { CardFilmInfo } from "./CardFilmInfo";

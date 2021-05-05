@@ -9,7 +9,7 @@ export const Content = styled.div`
   box-sizing: border-box;
   min-height: 50px;
   min-width: 50px;
-  max-height: 80%;
+  max-height: 90%;
   max-width: 80%;
   display: flex;
   flex-direction: column;
