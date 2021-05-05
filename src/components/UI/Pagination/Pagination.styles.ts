@@ -9,15 +9,23 @@ export const Pagination = styled.div`
   justify-content: center;
 `;
 
-export const setPaginationButtonStyle = (currentPage: number, page: number) => {
+type PaginationButtonStyle = {
+  currentPage: number;
+  pageNumber: number;
+};
+
+export const setPaginationButtonStyle = ({
+  currentPage,
+  pageNumber,
+}: PaginationButtonStyle) => {
   return css`
     width: 40px;
     margin: 0 10px;
-    font-weight: ${page === currentPage ? "bold" : "normal"};
-    color: ${page === currentPage
+    font-weight: ${pageNumber === currentPage ? "bold" : "normal"};
+    color: ${pageNumber === currentPage
       ? colors.fontColorLight
       : colors.fontColorDark};
-    background-color: ${page === currentPage
+    background-color: ${pageNumber === currentPage
       ? colors.backgroundColorLighter
       : colors.logoGrey};
     &:focus,

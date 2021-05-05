@@ -26,7 +26,7 @@ export const Pagination = ({
     <Styled.Pagination>
       {pageNumbersArray.map((pageNumber, pageIndex) => (
         <Button
-          css={Styled.setPaginationButtonStyle(currentPage, pageNumber)}
+          css={Styled.setPaginationButtonStyle({ currentPage, pageNumber })}
           key={pageNumber}
           title={`${pageIndex + 1}`}
           type="button"
