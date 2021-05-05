@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import { breakpoints, colors, fontSizes } from "components/UI";
+import { breakpoints, colors } from "components/UI";
 
 export const Card = styled.div`
   width: 100%;
@@ -14,17 +14,6 @@ export const Card = styled.div`
     height: 300px;
     margin: 0 auto;
   }
-  /* @media (min-width: ${breakpoints.laptop}) {
-    width: 24%;
-  }
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70%;
-    gap: 10px;
-    justify-content: space-between;
-  }
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 80%;
-  } */
 `;
 
 export const CardHeader = styled.div`
@@ -33,13 +22,17 @@ export const CardHeader = styled.div`
   flex-direction: row;
   gap: 16px;
   justify-content: space-between;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 60%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
 `;
 export const CardBody = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* justify-content: space-between; */
 `;
 export const CardFooter = styled.div`
   width: 100%;
@@ -86,11 +79,15 @@ export const AddToFavoriteButtonStyle = css`
   border: 2px solid ${colors.logoYellow};
   background-color: ${colors.fontColorLight};
 
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+  }
+
   &:focus,
   &:active,
   &:hover {
     border: 2px solid ${colors.logoGrey};
     background-color: ${colors.logoYellow};
-    color: ${colors.fontColorLightDark};
+    color: ${colors.fontColorLight};
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import { Backdrop } from "./Backdrop";
@@ -16,6 +16,12 @@ export const Modal = ({
   onCloseModalHandler,
 }: Props) => {
   const [isOpen, setIsOpen] = useState(isOpenModal);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, []);
   return ReactDOM.createPortal(
     <>
       {isOpen && (

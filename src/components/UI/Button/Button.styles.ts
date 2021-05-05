@@ -28,8 +28,6 @@ export const Button = styled.button<ButtonProps>`
     color: ${colors.fontColorLight};
   }
 
-  ${(props) => props.css}
-
   &:disabled {
     border: 2px solid ${colors.fontColorLightDark};
     background-color: ${colors.fontColorLight};
@@ -40,6 +38,7 @@ export const Button = styled.button<ButtonProps>`
   @media (max-width: ${breakpoints.mobile}) {
     width: 40%;
   }
+  ${(props) => props.css}
 `;
 
 export const SearchButton = styled(Button)`

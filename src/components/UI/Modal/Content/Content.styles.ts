@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "components/UI/theme";
+import { breakpoints, colors } from "components/UI/theme";
 
 export const Content = styled.div`
   position: fixed;
@@ -13,11 +13,24 @@ export const Content = styled.div`
   max-width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   justify-content: space-between;
   padding: 10px;
   background-color: ${colors.logoGrey};
   color: ${colors.fontColorDark};
   border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
+  overflow-y: scroll;
+  @media (max-width: ${breakpoints.laptop}) {
+    left: 30%;
+    transform: translate(-20%, -50%);
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 5%;
+    max-width: 90%;
+    height: auto;
+    transform: translate(0%, -50%);
+  }
+  /* @media (max-width: ${breakpoints.mobile}) {
+    width: 80%;
+  } */
 `;
