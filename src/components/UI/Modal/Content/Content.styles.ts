@@ -19,7 +19,7 @@ export const Content = styled.div`
   color: ${colors.fontColorDark};
   border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
-  overflow-y: scroll;
+  overflow-y: auto;
   @media (max-width: ${breakpoints.laptop}) {
     left: 30%;
     transform: translate(-20%, -50%);
@@ -30,7 +30,4 @@ export const Content = styled.div`
     height: auto;
     transform: translate(0%, -50%);
   }
-  /* @media (max-width: ${breakpoints.mobile}) {
-    width: 80%;
-  } */
 `;
