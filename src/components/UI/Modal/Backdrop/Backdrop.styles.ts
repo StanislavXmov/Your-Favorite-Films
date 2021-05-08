@@ -9,8 +9,7 @@ export const Backdrop = styled.div`
   background-color: rgba(51, 51, 51, 0.9);
   backdrop-filter: blur(1px);
   opacity: 1;
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 200ms;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1) 200ms;
   display: flex;
   align-items: center;
   justify-content: center;
