@@ -2,10 +2,17 @@ import React from "react";
 
 import * as Styled from "./ModalBody.styles";
 
-export const Content: React.FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+  onCloseModalHandler: () => void;
+};
+
+export const ModalBody = ({ children, onCloseModalHandler }: Props) => {
   return (
     <Styled.Content>
-      <Styled.CloseButton>&times;</Styled.CloseButton>
+      <Styled.CloseButton onClick={onCloseModalHandler}>
+        &times;
+      </Styled.CloseButton>
       {children}
     </Styled.Content>
   );

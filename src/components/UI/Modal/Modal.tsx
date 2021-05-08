@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import { Backdrop } from "./Backdrop";
-import { Content } from "./ModalBody";
+import { ModalBody } from "./ModalBody";
 
 type Props = {
   children: React.ReactNode;
@@ -16,23 +16,28 @@ export const Modal = ({
   onCloseModalHandler,
 }: Props) => {
   const [isOpen, setIsOpen] = useState(isOpenModal);
-  useEffect(() => {
+  const hideScrollHandler = useCallback(() => {
     document.body.style.overflow = "hidden";
+  }, []);
+  const showScrollHandler = useCallback(() => {
+    document.body.style.overflowY = "auto";
+  }, []);
+  useEffect(() => {
+    hideScrollHandler();
     return () => {
-      document.body.style.overflowY = "scroll";
+      showScrollHandler();
     };
   }, []);
+  const onCloseHandler = () => {
+    onCloseModalHandler();
+    setIsOpen(false);
+  };
   return ReactDOM.createPortal(
     <>
       {isOpen && (
         <>
-          <Backdrop
-            onCloseModalHandler={() => {
-              onCloseModalHandler();
-              setIsOpen(false);
-            }}
-          />
-          <Content>{children}</Content>
+          <Backdrop onCloseModalHandler={onCloseHandler} />
+          <ModalBody onCloseModalHandler={onCloseHandler}>{children}</ModalBody>
         </>
       )}
     </>,

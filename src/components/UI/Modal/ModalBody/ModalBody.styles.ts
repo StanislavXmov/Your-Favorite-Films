@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakpoints, colors, fontSizes } from "components/UI/theme";
+import { breakpoints, colors } from "components/UI/theme";
 
 export const Content = styled.div`
   position: fixed;

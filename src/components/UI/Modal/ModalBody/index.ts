@@ -1,1 +1,1 @@
-export { Content } from "./ModalBody";
+export { ModalBody } from "./ModalBody";
