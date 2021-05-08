@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import { Backdrop } from "./Backdrop";
-import { Content } from "./Content";
+import { Content } from "./ModalBody";
 
 type Props = {
   children: React.ReactNode;
