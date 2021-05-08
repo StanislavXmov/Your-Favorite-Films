@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { breakpoints, colors } from "components/UI/theme";
+import { breakpoints, colors, fontSizes } from "components/UI/theme";
 
 export const Content = styled.div`
   position: fixed;
@@ -25,5 +25,30 @@ export const Content = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 90%;
     height: auto;
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: ${colors.fontColorDark};
+  font-size: 30px;
+  font-weight: bold;
+  outline: none;
+  padding: 0 8px;
+  cursor: pointer;
+  border: 2px solid ${colors.logoYellow};
+  background-color: ${colors.fontColorLight};
+  transition: all 0.2s ease-out;
+  &:focus,
+  &:active,
+  &:hover {
+    border: 2px solid ${colors.logoGrey};
+    background-color: ${colors.logoYellow};
+    color: ${colors.fontColorLight};
   }
 `;
