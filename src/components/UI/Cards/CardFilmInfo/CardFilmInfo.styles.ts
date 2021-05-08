@@ -16,14 +16,14 @@ export const Card = styled.div`
   }
 `;
 
-export const CardHeader = styled.div`
+export const CardHeader = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;
   gap: 16px;
   justify-content: space-between;
   @media (max-width: ${breakpoints.tablet}) {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     flex-direction: column;
   }
@@ -34,7 +34,7 @@ export const CardBody = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
-export const CardFooter = styled.div`
+export const CardFooter = styled.footer`
   width: 100%;
   display: flex;
   flex-direction: column;
