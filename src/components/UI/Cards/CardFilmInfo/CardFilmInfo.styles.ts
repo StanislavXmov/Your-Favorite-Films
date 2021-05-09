@@ -11,6 +11,7 @@ export const Card = styled.div`
   justify-content: space-between;
 
   svg {
+    width: 100%;
     height: 300px;
     margin: 0 auto;
   }
@@ -41,20 +42,14 @@ export const CardImage = styled.img`
   object-fit: contain;
 `;
 
-export const Date = styled.div`
+export const FilmInfo = styled.div`
   padding: 6px 0;
   color: ${colors.fontColorDark};
   border-bottom: 2px solid ${colors.primaryColor};
 `;
-export const Language = styled.div`
-  padding: 6px 0;
+export const FilmInfoTitle = styled.span`
+  font-weight: bold;
   color: ${colors.fontColorDark};
-  border-bottom: 2px solid ${colors.primaryColor};
-`;
-export const Rating = styled.div`
-  padding: 6px 0;
-  color: ${colors.fontColorDark};
-  border-bottom: 2px solid ${colors.primaryColor};
 `;
 
 export const CardTitle = styled.h2`
@@ -68,7 +63,7 @@ export const CardDesc = styled.p`
   color: ${colors.fontColorDark};
 `;
 
-export const AddToFavoriteButtonStyle = css`
+export const AddToFavoriteButton = css`
   border: 2px solid ${colors.secondaryColor};
   background-color: ${colors.fontColorLight};
 
