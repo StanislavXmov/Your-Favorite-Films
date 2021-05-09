@@ -10,7 +10,7 @@ export const Card = styled.div`
   gap: 16px;
   justify-content: space-between;
   padding: 10px;
-  background-color: ${colors.logoGrey};
+  background-color: ${colors.tertiaryColor};
   color: ${colors.fontColorDark};
   border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
@@ -53,7 +53,7 @@ export const CardButtonStyle = css`
     color: ${colors.fontColorDark};
   }
   &:hover {
-    border: 2px solid ${colors.logoGrey};
+    border: 2px solid ${colors.tertiaryColor};
     background-color: ${colors.backgroundColorLighter};
     color: ${colors.fontColorLight};
   }

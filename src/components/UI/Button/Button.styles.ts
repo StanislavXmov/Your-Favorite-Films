@@ -23,15 +23,15 @@ export const Button = styled.button<ButtonProps>`
   &:focus,
   &:active,
   &:hover {
-    border: 2px solid ${colors.logoGrey};
+    border: 2px solid ${colors.tertiaryColor};
     background-color: ${colors.backgroundColorLighter};
     color: ${colors.fontColorLight};
   }
 
   &:disabled {
-    border: 2px solid ${colors.fontColorLightDark};
+    border: 2px solid ${colors.fontColorMedium};
     background-color: ${colors.fontColorLight};
-    color: ${colors.fontColorLightDark};
+    color: ${colors.fontColorMedium};
     cursor: not-allowed;
   }
 

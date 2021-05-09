@@ -27,7 +27,7 @@ export const setPaginationButtonStyle = ({
       : colors.fontColorDark};
     background-color: ${pageNumber === currentPage
       ? colors.backgroundColorLighter
-      : colors.logoGrey};
+      : colors.tertiaryColor};
     &:focus,
     &:active,
     &:hover {

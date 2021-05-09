@@ -51,23 +51,23 @@ export const CardImage = styled.img`
 export const Date = styled.div`
   padding: 6px 0;
   color: ${colors.fontColorDark};
-  border-bottom: 2px solid ${colors.logoOrange};
+  border-bottom: 2px solid ${colors.primaryColor};
 `;
 export const Language = styled.div`
   padding: 6px 0;
   color: ${colors.fontColorDark};
-  border-bottom: 2px solid ${colors.logoOrange};
+  border-bottom: 2px solid ${colors.primaryColor};
 `;
 export const Rating = styled.div`
   padding: 6px 0;
   color: ${colors.fontColorDark};
-  border-bottom: 2px solid ${colors.logoOrange};
+  border-bottom: 2px solid ${colors.primaryColor};
 `;
 
 export const CardTitle = styled.h2`
   padding: 4px 0;
   color: ${colors.fontColorDark};
-  border-bottom: 4px solid ${colors.logoOrange};
+  border-bottom: 4px solid ${colors.primaryColor};
 `;
 
 export const CardDesc = styled.p`
@@ -76,7 +76,7 @@ export const CardDesc = styled.p`
 `;
 
 export const AddToFavoriteButtonStyle = css`
-  border: 2px solid ${colors.logoYellow};
+  border: 2px solid ${colors.secondaryColor};
   background-color: ${colors.fontColorLight};
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -86,8 +86,8 @@ export const AddToFavoriteButtonStyle = css`
   &:focus,
   &:active,
   &:hover {
-    border: 2px solid ${colors.logoGrey};
-    background-color: ${colors.logoYellow};
+    border: 2px solid ${colors.tertiaryColor};
+    background-color: ${colors.secondaryColor};
     color: ${colors.fontColorLight};
   }
 `;

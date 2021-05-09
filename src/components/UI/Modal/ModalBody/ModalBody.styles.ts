@@ -14,7 +14,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
-  background-color: ${colors.logoGrey};
+  background-color: ${colors.tertiaryColor};
   color: ${colors.fontColorDark};
   border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
@@ -41,14 +41,14 @@ export const CloseButton = styled.button`
   outline: none;
   padding: 0 8px;
   cursor: pointer;
-  border: 2px solid ${colors.logoYellow};
+  border: 2px solid ${colors.secondaryColor};
   background-color: ${colors.fontColorLight};
   transition: all 0.2s ease-out;
   &:focus,
   &:active,
   &:hover {
-    border: 2px solid ${colors.logoGrey};
-    background-color: ${colors.logoYellow};
+    border: 2px solid ${colors.tertiaryColor};
+    background-color: ${colors.secondaryColor};
     color: ${colors.fontColorLight};
   }
 `;

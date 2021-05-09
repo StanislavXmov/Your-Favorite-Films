@@ -4,7 +4,7 @@ import { InputBasic, colors, breakpoints, InputProps } from "components/UI";
 
 export const SearchWrapper = styled.div`
   padding: 16px;
-  background-color: ${colors.logoGrey};
+  background-color: ${colors.tertiaryColor};
 `;
 export const Form = styled.form`
   display: flex;
