@@ -34,13 +34,6 @@ export const CardBody = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
-export const CardFooter = styled.footer`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: space-between;
-`;
 
 export const CardImage = styled.img`
   width: 100%;

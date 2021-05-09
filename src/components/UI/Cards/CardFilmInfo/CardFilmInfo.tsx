@@ -47,14 +47,6 @@ export const CardFilmInfo = (props: Props) => {
       <Styled.CardBody>
         <Styled.CardDesc>{description}</Styled.CardDesc>
       </Styled.CardBody>
-      <Styled.CardFooter>
-        <Button
-          title="Close"
-          isDisabled={false}
-          type="button"
-          onClick={onCloseHandler}
-        />
-      </Styled.CardFooter>
     </Styled.Card>
   );
 };
