@@ -19,9 +19,6 @@ export const Content = styled.div`
   border: 3px solid ${colors.fontColorDark};
   border-radius: 6px;
   overflow-y: auto;
-  /* @media (max-width: ${breakpoints.laptop}) {
-    
-  } */
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 90%;
     height: auto;
