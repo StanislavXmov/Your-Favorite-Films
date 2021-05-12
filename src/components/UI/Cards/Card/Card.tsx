@@ -27,7 +27,7 @@ export const Card = (props: Props) => {
   return (
     <>
       <Styled.Card>
-        {getPosterSrc !== null ? (
+        {getPosterSrc ? (
           <Styled.CardImage src={getPosterSrc} />
         ) : (
           <CardImagePlaceholder />
@@ -42,7 +42,7 @@ export const Card = (props: Props) => {
           onClick={() => setSelectedFilm(film)}
         />
       </Styled.Card>
-      {selectedFilm !== null && (
+      {selectedFilm && (
         <Modal
           isOpenModal={selectedFilm !== null}
           onCloseModalHandler={() => setSelectedFilm(null)}
