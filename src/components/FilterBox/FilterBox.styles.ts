@@ -16,10 +16,6 @@ export const Form = styled.form`
   border-radius: 6px;
   background-color: ${colors.tertiaryColor};
 
-  /* @media (max-width: ${breakpoints.mobile}) {
-    flex-direction: column;
-  } */
-
   @media (max-width: ${breakpoints.tablet}) {
     flex-wrap: wrap;
   }
@@ -33,11 +29,6 @@ export const FilterInput = styled(InputBasic)<InputProps>`
     width: 100%;
     margin-bottom: 0;
   }
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    width: 100%;
-    margin-bottom: 0;
-  } */
 `;
 
 export const FilterDateButton = styled.button`
@@ -60,27 +51,12 @@ export const FilterDateButton = styled.button`
     color: ${colors.fontColorDark};
   }
 
-  /* &:focus,
-  &:active,
-  &:hover {
-    border: 2px solid ${colors.tertiaryColor};
-    background-color: ${colors.backgroundColorLighter};
-    color: ${colors.fontColorLight};
-    span {
-      background-color: ${colors.fontColorLight};
-    }
-  } */
-
   &:disabled {
     border: 2px solid ${colors.fontColorMedium};
     background-color: ${colors.fontColorLight};
     color: ${colors.fontColorMedium};
     cursor: not-allowed;
   }
-
-  /* @media (max-width: ${breakpoints.mobile}) {
-    width: 40%;
-  } */
 `;
 
 export const ArrorUp = styled.span`
