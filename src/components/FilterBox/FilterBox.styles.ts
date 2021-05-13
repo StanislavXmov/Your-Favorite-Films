@@ -30,13 +30,14 @@ export const FilterInput = styled(InputBasic)<InputProps>`
   width: 50%;
 
   @media (max-width: ${breakpoints.tablet}) {
-    width: 80%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
     width: 100%;
     margin-bottom: 0;
   }
+
+  /* @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    margin-bottom: 0;
+  } */
 `;
 
 export const FilterDateButton = styled.button`
@@ -47,7 +48,7 @@ export const FilterDateButton = styled.button`
   background-color: ${colors.fontColorLight};
   box-sizing: border-box;
   border-radius: 10px;
-  color: ${colors.fontColorDark};
+  color: ${colors.fontColorMedium};
   font-size: ${fontSizes.middle};
   font-weight: bold;
   outline: none;
@@ -55,7 +56,11 @@ export const FilterDateButton = styled.button`
   cursor: pointer;
   transition: all 0.2s ease-out;
 
-  &:focus,
+  &.active {
+    color: ${colors.fontColorDark};
+  }
+
+  /* &:focus,
   &:active,
   &:hover {
     border: 2px solid ${colors.tertiaryColor};
@@ -64,7 +69,7 @@ export const FilterDateButton = styled.button`
     span {
       background-color: ${colors.fontColorLight};
     }
-  }
+  } */
 
   &:disabled {
     border: 2px solid ${colors.fontColorMedium};

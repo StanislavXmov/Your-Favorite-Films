@@ -1,9 +1,9 @@
-import { Label } from "components/UI";
 import React, { useState } from "react";
 
 import * as Styled from "./FilterBox.styles";
 
 export const FilterBox = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [isFilteredByDate, setIsFilteredByDates] = useState<null | boolean>(
     null
   );
@@ -25,18 +25,26 @@ export const FilterBox = () => {
       setIsFilteredByDates(null);
     }
   };
+  const dateFilterClassNameHandler = () => {
+    if (isFilteredByDate === null) {
+      return "";
+    }
+    return "active";
+  };
   return (
     <Styled.Form>
       <Styled.FilterInput
         type="text"
-        value=""
-        onChange={() => {
-          console.log();
-        }}
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
         placeholder="Title"
         id="title"
       />
-      <Styled.FilterDateButton type="button" onClick={dateFilterHandler}>
+      <Styled.FilterDateButton
+        className={dateFilterClassNameHandler()}
+        type="button"
+        onClick={dateFilterHandler}
+      >
         Date {dateFilterSymbol(isFilteredByDate)}
       </Styled.FilterDateButton>
       <Styled.SelectWrapper>
