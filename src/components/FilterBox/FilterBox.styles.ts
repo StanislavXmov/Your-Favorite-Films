@@ -63,11 +63,10 @@ export const FilterDateButton = styled.button`
     color: ${colors.fontColorDark};
   }
 
-  &:disabled {
-    border: 2px solid ${colors.fontColorMedium};
-    background-color: ${colors.fontColorLight};
-    color: ${colors.fontColorMedium};
-    cursor: not-allowed;
+  &:focus,
+  &:active,
+  &:hover {
+    border: 2px solid ${colors.backgroundColorLighter};
   }
 `;
 
@@ -102,6 +101,13 @@ export const SelectWrapper = styled.div`
   font-weight: bold;
   outline: none;
   padding: 9px;
+  transition: all 0.2s ease-out;
+
+  &:focus,
+  &:active,
+  &:hover {
+    border: 2px solid ${colors.backgroundColorLighter};
+  }
 `;
 
 export const LangLabel = styled.label`

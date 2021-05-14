@@ -12,7 +12,8 @@ export const InputBasic = styled.input`
   position: relative;
 
   &:focus,
-  &:active {
+  &:active,
+  &:hover {
     border: 2px solid ${colors.backgroundColorLighter};
   }
 

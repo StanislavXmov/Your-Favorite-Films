@@ -10,8 +10,8 @@ const CARDS_PER_PAGE = 9;
 export const Favorites = () => {
   const [favoritesFilms, setfavoritesFilms] = useState<Film[]>(films);
   const [filteredFilms, setFilteredFilms] = useState<Film[]>(favoritesFilms);
-
   const [currentPage, setCurrentPage] = useState(0);
+
   const pagesAmountInPagination = Math.ceil(
     filteredFilms.length / CARDS_PER_PAGE
   );
