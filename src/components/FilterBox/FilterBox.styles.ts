@@ -31,6 +31,18 @@ export const FilterInput = styled(InputBasic)<InputProps>`
   }
 `;
 
+export const FilterByWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: bold;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    gap: 2px;
+  }
+`;
+
 export const FilterDateButton = styled.button`
   display: flex;
   align-items: center;
@@ -89,7 +101,7 @@ export const SelectWrapper = styled.div`
   font-size: ${fontSizes.small};
   font-weight: bold;
   outline: none;
-  padding: 10px;
+  padding: 9px;
 `;
 
 export const LangLabel = styled.label`
