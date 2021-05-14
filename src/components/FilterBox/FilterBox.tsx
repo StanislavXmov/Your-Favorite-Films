@@ -27,9 +27,9 @@ export const FilterBox = () => {
   };
   const dateFilterClassNameHandler = () => {
     if (isFilteredByDate === null) {
-      return "";
+      return false;
     }
-    return "active";
+    return true;
   };
   return (
     <Styled.Form>
@@ -43,7 +43,7 @@ export const FilterBox = () => {
       <Styled.FilterByWrapper>
         Filter By:
         <Styled.FilterDateButton
-          className={dateFilterClassNameHandler()}
+          active={dateFilterClassNameHandler()}
           type="button"
           onClick={dateFilterHandler}
         >
