@@ -4,11 +4,10 @@ import * as Styled from "./FilterByDate.styles";
 
 export const FilterByDate = () => {
   const [isActive, setIsActive] = useState(false);
-  const [isFilteredByDate, setIsFilteredByDates] = useState<null | boolean>(
-    null
-  );
+  const [isFilteredByDate, setIsFilteredByDates] = useState(false);
+
   const dateFilterSymbol = (isFiltered: boolean | null) => {
-    if (isFiltered === null) {
+    if (!isActive) {
       return null;
     }
     if (isFiltered) {
@@ -17,23 +16,18 @@ export const FilterByDate = () => {
     return <Styled.ArrorDown />;
   };
   const dateFilterHandler = () => {
-    if (isFilteredByDate === null) {
+    if (!isFilteredByDate && isActive) {
+      setIsActive(false);
+    } else if (!isFilteredByDate) {
+      setIsActive(true);
       setIsFilteredByDates(true);
-    } else if (isFilteredByDate) {
-      setIsFilteredByDates(false);
     } else {
-      setIsFilteredByDates(null);
+      setIsFilteredByDates(false);
     }
-  };
-  const dateFilterClassNameHandler = () => {
-    if (isFilteredByDate === null) {
-      return false;
-    }
-    return true;
   };
   return (
     <Styled.FilterDateButton
-      active={dateFilterClassNameHandler()}
+      active={isActive}
       type="button"
       onClick={dateFilterHandler}
     >
