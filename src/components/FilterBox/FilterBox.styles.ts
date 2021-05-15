@@ -1,11 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  InputBasic,
-  colors,
-  breakpoints,
-  InputProps,
-  fontSizes,
-} from "components/UI";
+import { colors, breakpoints, fontSizes } from "components/UI";
 
 export const Form = styled.form`
   display: flex;
@@ -18,16 +12,6 @@ export const Form = styled.form`
 
   @media (max-width: ${breakpoints.tablet}) {
     flex-wrap: wrap;
-  }
-`;
-
-export const FilterInput = styled(InputBasic)<InputProps>`
-  height: 100%;
-  width: 50%;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 100%;
-    margin-bottom: 0;
   }
 `;
 

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import * as Styled from "./FilterBox.styles";
+import { FilterByTitle } from "./FilterByTitle";
 
 export const FilterBox = () => {
-  const [searchQuery, setSearchQuery] = useState("");
   const [isFilteredByDate, setIsFilteredByDates] = useState<null | boolean>(
     null
   );
@@ -33,13 +33,7 @@ export const FilterBox = () => {
   };
   return (
     <Styled.Form>
-      <Styled.FilterInput
-        type="text"
-        value={searchQuery}
-        onChange={(event) => setSearchQuery(event.target.value)}
-        placeholder="Title"
-        id="title"
-      />
+      <FilterByTitle />
       <Styled.FilterByWrapper>
         Filter By:
         <Styled.FilterDateButton
