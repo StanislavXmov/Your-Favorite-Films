@@ -34,13 +34,22 @@ export const Card = (props: Props) => {
         )}
         <Styled.CardTitle>{title}</Styled.CardTitle>
         <Styled.CardDesc>{getTrimDescription(overview)}</Styled.CardDesc>
-        <Button
-          css={Styled.CardButtonStyle}
-          title="Open"
-          isDisabled={false}
-          type="button"
-          onClick={() => setSelectedFilm(film)}
-        />
+        <Styled.CardButtonsWrapper>
+          <Button
+            css={Styled.CardButtonStyle}
+            title="Open"
+            isDisabled={false}
+            type="button"
+            onClick={() => setSelectedFilm(film)}
+          />
+          <Button
+            css={Styled.CardButtonStyle}
+            title="❤"
+            isDisabled={false}
+            type="button"
+            onClick={() => console.log("❤")}
+          />
+        </Styled.CardButtonsWrapper>
       </Styled.Card>
       {selectedFilm && (
         <Modal

@@ -45,6 +45,11 @@ export const CardDesc = styled.p`
   color: ${colors.fontColorDark};
 `;
 
+export const CardButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const CardButtonStyle = css`
   &:focus,
   &:active {
