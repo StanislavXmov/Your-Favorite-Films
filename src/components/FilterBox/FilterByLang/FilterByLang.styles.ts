@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, breakpoints, fontSizes } from "components/UI";
+import { colors, fontSizes } from "components/UI";
 
 export const SelectWrapper = styled.div`
   display: flex;
