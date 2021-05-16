@@ -8,8 +8,10 @@ import { films } from "./mockData";
 const CARDS_PER_PAGE = 9;
 
 export const Favorites = () => {
-  const [favoritesFilms, setfavoritesFilms] = useState<Film[]>(films);
-  const [filteredFilms, setFilteredFilms] = useState<Film[]>(favoritesFilms);
+  const [favoritesFilms] = useState<Film[]>(films);
+  const [filteredFilms, setFilteredFilms] = useState<Film[]>([
+    ...favoritesFilms,
+  ]);
   const [currentPage, setCurrentPage] = useState(0);
 
   const pagesAmountInPagination = Math.ceil(
@@ -30,7 +32,11 @@ export const Favorites = () => {
   return (
     <Container>
       <h2>Your Favorite Films</h2>
-      <FilterBox />
+      <FilterBox
+        films={favoritesFilms}
+        filteredFilms={filteredFilms}
+        setFilteredFilms={setFilteredFilms}
+      />
       <CardsWrapper>{filteredFilms && renderFilmsCards()}</CardsWrapper>
       {filteredFilms.length > CARDS_PER_PAGE && (
         <Pagination
