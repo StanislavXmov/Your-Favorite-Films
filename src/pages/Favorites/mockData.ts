@@ -103,4 +103,21 @@ export const films: Film[] = [
     voteAverage: 7.1,
     voteCount: 1333,
   },
+  {
+    adult: false,
+    backdropPath: "/a58oc5qGNazb3QOxEH8eG5S7gjr.jpg",
+    genreIds: [80, 18],
+    id: 103,
+    originalLanguage: "en",
+    originalTitle: "Taxi Driver",
+    overview:
+      "A mentally unstable Vietnam War veteran works as a night-time taxi driver in New York City where the perceived decadence and sleaze feed his urge for violent action, attempting to save a preadolescent prostitute in the process.",
+    popularity: 21.902,
+    posterPath: "/ekstpH614fwDX8DUln1a2Opz0N8.jpg",
+    releaseDate: "1976-02-09",
+    title: "Taxi Driver",
+    video: false,
+    voteAverage: 8.2,
+    voteCount: 8130,
+  },
 ];

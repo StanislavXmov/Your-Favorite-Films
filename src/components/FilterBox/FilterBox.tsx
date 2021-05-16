@@ -50,7 +50,13 @@ export const FilterBox = ({
           setFilteredState={setFilteredState}
           filteredState={filteredState}
         />
-        <FilterByLang />
+        <FilterByLang
+          films={films}
+          filteredFilms={filteredFilms}
+          setFilteredFilms={setFilteredFilms}
+          setFilteredState={setFilteredState}
+          filteredState={filteredState}
+        />
       </Styled.FilterByWrapper>
     </Styled.Form>
   );
