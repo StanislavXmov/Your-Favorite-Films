@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 import { Film } from "store/state";
+import { FilterState } from "../FilterBox";
 
 import * as Styled from "./FilterByDate.styles";
 
@@ -8,12 +9,16 @@ type Props = {
   films: Film[];
   filteredFilms: Film[];
   setFilteredFilms: (films: Film[]) => void;
+  setFilteredState: Dispatch<SetStateAction<FilterState>>;
+  filteredState: FilterState;
 };
 
 export const FilterByDate = ({
   films,
   filteredFilms,
   setFilteredFilms,
+  setFilteredState,
+  filteredState,
 }: Props) => {
   const [isActive, setIsActive] = useState(false);
   const [isFilteredByDate, setIsFilteredByDates] = useState(false);
@@ -49,16 +54,23 @@ export const FilterByDate = ({
   const dateFilterHandler = () => {
     if (!isFilteredByDate && isActive) {
       setIsActive(false);
-      setFilteredFilms([...films]);
+      if (filteredState.title || filteredState.lang) {
+        setFilteredFilms([...filteredFilms]);
+      } else {
+        setFilteredFilms([...films]);
+      }
+      setFilteredState({ ...filteredState, date: false });
     } else if (!isFilteredByDate) {
       setIsActive(true);
       setIsFilteredByDates(true);
       const filtered = filterByUp(filteredFilms);
       setFilteredFilms([...filtered]);
+      setFilteredState({ ...filteredState, date: true });
     } else {
       setIsFilteredByDates(false);
       const filtered = filterByDown(filteredFilms);
       setFilteredFilms([...filtered]);
+      setFilteredState({ ...filteredState, date: true });
     }
   };
   return (

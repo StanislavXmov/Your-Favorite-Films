@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Film } from "store/state";
 
 import { FilterByDate } from "./FilterByDate";
@@ -11,11 +13,22 @@ type Props = {
   setFilteredFilms: (films: Film[]) => void;
 };
 
+export type FilterState = {
+  title: boolean;
+  date: boolean;
+  lang: boolean;
+};
+
 export const FilterBox = ({
   films,
   filteredFilms,
   setFilteredFilms,
 }: Props) => {
+  const [filteredState, setFilteredState] = useState({
+    title: false,
+    date: false,
+    lang: false,
+  });
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
@@ -25,6 +38,8 @@ export const FilterBox = ({
         films={films}
         filteredFilms={filteredFilms}
         setFilteredFilms={setFilteredFilms}
+        setFilteredState={setFilteredState}
+        filteredState={filteredState}
       />
       <Styled.FilterByWrapper>
         Filter By:
@@ -32,6 +47,8 @@ export const FilterBox = ({
           films={films}
           filteredFilms={filteredFilms}
           setFilteredFilms={setFilteredFilms}
+          setFilteredState={setFilteredState}
+          filteredState={filteredState}
         />
         <FilterByLang />
       </Styled.FilterByWrapper>
