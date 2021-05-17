@@ -21,16 +21,20 @@ export const FilterByTitle = ({
   filteredState,
 }: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredBeforeChange, setFilteredBeforeChange] = useState([
+    ...filteredFilms,
+  ]);
   const onChangeHandler = (query: string) => {
     setSearchQuery(query);
     if (!query.trim()) {
       if (filteredState.date || filteredState.lang) {
-        setFilteredFilms([...filteredFilms]);
+        setFilteredFilms([...filteredBeforeChange]);
       } else {
         setFilteredFilms([...films]);
       }
       setFilteredState({ ...filteredState, title: false });
     } else {
+      setFilteredBeforeChange([...filteredFilms]);
       if (filteredState.date || filteredState.lang) {
         const filtered = filteredFilms.filter(({ title }) =>
           title.toLowerCase().startsWith(query.toLowerCase())

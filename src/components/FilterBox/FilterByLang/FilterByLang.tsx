@@ -40,9 +40,10 @@ export const FilterByLang = ({
     ));
   };
   const renderOptions = () => {
-    if (filteredState.date || filteredState.title) {
-      return getOptions(filteredFilms);
-    }
+    // TODO
+    // if (filteredState.date || filteredState.title) {
+    //   return getOptions(filteredFilms);
+    // }
     return getOptions(films);
   };
   const selectHandler = (lang: string) => {
@@ -56,6 +57,7 @@ export const FilterByLang = ({
       } else {
         setFilteredFilms([...films]);
       }
+      // setFilteredBeforeChange(null);
       setFilteredState({ ...filteredState, lang: false });
     } else {
       if (!filteredBeforeChange) {
