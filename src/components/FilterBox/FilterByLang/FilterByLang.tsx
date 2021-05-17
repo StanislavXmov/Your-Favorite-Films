@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 import { Film } from "store/state";
 
@@ -20,6 +20,9 @@ export const FilterByLang = ({
   setFilteredState,
   filteredState,
 }: Props) => {
+  const [filteredBeforeChange, setFilteredBeforeChange] = useState<
+    null | Film[]
+  >(null);
   const getOptions = (favoritesFilms: Film[]) => {
     const languages: string[] = [];
     favoritesFilms.forEach((film) => {
@@ -45,12 +48,19 @@ export const FilterByLang = ({
   const selectHandler = (lang: string) => {
     if (lang === "all") {
       if (filteredState.date || filteredState.title) {
-        setFilteredFilms([...filteredFilms]);
+        if (filteredBeforeChange) {
+          setFilteredFilms([...filteredBeforeChange]);
+        } else {
+          setFilteredFilms([...filteredFilms]);
+        }
       } else {
         setFilteredFilms([...films]);
       }
       setFilteredState({ ...filteredState, lang: false });
     } else {
+      if (!filteredBeforeChange) {
+        setFilteredBeforeChange([...filteredFilms]);
+      }
       if (filteredState.date || filteredState.title) {
         const filtered = filteredFilms.filter(
           ({ originalLanguage }) => originalLanguage === lang

@@ -22,6 +22,9 @@ export const FilterByDate = ({
 }: Props) => {
   const [isActive, setIsActive] = useState(false);
   const [isFilteredByDate, setIsFilteredByDates] = useState(false);
+  const [filteredBeforeChange, setFilteredBeforeChange] = useState([
+    ...filteredFilms,
+  ]);
 
   const dateFilterSymbol = (isFiltered: boolean | null) => {
     if (!isActive) {
@@ -55,13 +58,14 @@ export const FilterByDate = ({
     if (!isFilteredByDate && isActive) {
       setIsActive(false);
       if (filteredState.title || filteredState.lang) {
-        setFilteredFilms([...filteredFilms]);
+        setFilteredFilms([...filteredBeforeChange]);
       } else {
         setFilteredFilms([...films]);
       }
       setFilteredState({ ...filteredState, date: false });
     } else if (!isFilteredByDate) {
       setIsActive(true);
+      setFilteredBeforeChange([...filteredFilms]);
       setIsFilteredByDates(true);
       const filtered = filterByUp(filteredFilms);
       setFilteredFilms([...filtered]);
