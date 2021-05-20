@@ -21,8 +21,11 @@ export const FilterByWrapper = styled.div`
   justify-content: space-between;
   gap: 10px;
   font-weight: bold;
+  white-space: nowrap;
 
   @media (max-width: ${breakpoints.mobile}) {
-    gap: 2px;
+    gap: 6px;
+    flex-direction: column;
+    margin: 0 auto;
   }
 `;
