@@ -8,7 +8,6 @@ export function favorite(
   switch (action.type) {
     case FavoriteAction.GetFavorite:
       return {
-        ...state,
         favoritesFilms: [...action.payload],
       };
     case FavoriteAction.AddFavorite:

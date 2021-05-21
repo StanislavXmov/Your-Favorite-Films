@@ -2,7 +2,7 @@ import { Film } from "store/state";
 
 // eslint-disable-next-line no-shadow
 export enum FavoriteAction {
-  GetFavorite = "GET_FAVORITEES_FILMS",
+  GetFavorite = "GET_FAVORITES_FILMS",
   AddFavorite = "ADD_FAVORITE_FILM",
   RemoveFavorite = "REMOVE_FAVORITE_FILM",
 }

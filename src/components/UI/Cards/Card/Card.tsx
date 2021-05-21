@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import { Button, Modal, CardFilmInfo } from "components/UI";
+import { addFavoriteFilm } from "store";
 import { Film } from "store/state";
 import { apiImageUrl } from "api";
 
@@ -17,6 +19,7 @@ export const Card = (props: Props) => {
   const { film } = props;
   const { posterPath, title, overview } = film;
   const [selectedFilm, setSelectedFilm] = useState<null | Film>(null);
+  const dispatch = useDispatch();
   const getTrimDescription = (string: string) => {
     if (string.length > MAX_DESCRIPTION_LENGTH) {
       return `${string.substr(0, MAX_DESCRIPTION_LENGTH)}...`;
@@ -24,6 +27,9 @@ export const Card = (props: Props) => {
     return string;
   };
   const getPosterSrc = apiImageUrl(posterPath);
+  const favoriteHandler = (favoriteFilm: Film) => {
+    dispatch(addFavoriteFilm(favoriteFilm));
+  };
   return (
     <>
       <Styled.Card>
@@ -47,7 +53,7 @@ export const Card = (props: Props) => {
             title="❤"
             isDisabled={false}
             type="button"
-            onClick={() => console.log("❤")}
+            onClick={() => favoriteHandler(film)}
           />
         </Styled.CardButtonsWrapper>
       </Styled.Card>
