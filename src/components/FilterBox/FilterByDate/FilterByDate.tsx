@@ -11,28 +11,34 @@ type Props = {
 
 export const FilterByDate = ({ setFilteredState, filteredState }: Props) => {
   const [isActive, setIsActive] = useState(false);
-  const [isFilteredByDate, setIsFilteredByDates] = useState(false);
+  const [isIncreaseDate, setIsIncreaseDate] = useState(false);
+  const [isDecreaseDate, setIsDecreaseDate] = useState(false);
 
-  const dateFilterSymbol = (isFiltered: boolean | null) => {
+  const getFilterSymbol = () => {
     if (!isActive) {
       return null;
     }
-    if (isFiltered) {
+    if (isIncreaseDate) {
       return <Styled.ArrorUp />;
     }
-    return <Styled.ArrorDown />;
+    if (isDecreaseDate) {
+      return <Styled.ArrorDown />;
+    }
+    return null;
   };
   const dateFilterHandler = () => {
-    if (!isFilteredByDate && isActive) {
+    if (isDecreaseDate && !isIncreaseDate && isActive) {
       setIsActive(false);
       setFilteredState({ ...filteredState, date: null });
-    } else if (!isFilteredByDate) {
+    } else if (!isIncreaseDate) {
       setIsActive(true);
-      setIsFilteredByDates(true);
-      setFilteredState({ ...filteredState, date: true });
-    } else {
-      setIsFilteredByDates(false);
-      setFilteredState({ ...filteredState, date: false });
+      setIsIncreaseDate(true);
+      setIsDecreaseDate(false);
+      setFilteredState({ ...filteredState, date: "increase" });
+    } else if (!isDecreaseDate) {
+      setIsIncreaseDate(false);
+      setIsDecreaseDate(true);
+      setFilteredState({ ...filteredState, date: "decrease" });
     }
   };
   return (
@@ -41,7 +47,7 @@ export const FilterByDate = ({ setFilteredState, filteredState }: Props) => {
       type="button"
       onClick={dateFilterHandler}
     >
-      Date {dateFilterSymbol(isFilteredByDate)}
+      Date {getFilterSymbol()}
     </Styled.FilterDateButton>
   );
 };

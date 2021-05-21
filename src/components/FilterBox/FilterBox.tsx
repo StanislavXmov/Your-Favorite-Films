@@ -15,7 +15,7 @@ type Props = {
 
 export type FilterState = {
   title: null | string;
-  date: null | boolean;
+  date: null | "increase" | "decrease";
   lang: null | string;
 };
 
@@ -45,14 +45,14 @@ export const FilterBox = ({ films, setFilteredFilms }: Props) => {
         );
       }
     }
-    if (filteredState.date) {
+    if (filteredState.date === "increase") {
       filtered = filtered.sort((filmA, filmB) => {
         if (getDate(filmA) > getDate(filmB)) {
           return -1;
         }
         return 1;
       });
-    } else if (filteredState.date === false) {
+    } else if (filteredState.date === "decrease") {
       filtered = filtered.sort((filmA, filmB) => {
         if (getDate(filmA) > getDate(filmB)) {
           return 1;
