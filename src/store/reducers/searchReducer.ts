@@ -1,8 +1,8 @@
 import { SearchAction, SearchActions } from "../actions";
-import { initialState, SearchState } from "../state";
+import { initialSearchState, SearchState } from "../state";
 
 export function search(
-  state: SearchState = initialState,
+  state: SearchState = initialSearchState,
   action: SearchActions
 ): SearchState {
   switch (action.type) {

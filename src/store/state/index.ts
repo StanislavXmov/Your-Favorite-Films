@@ -1,2 +1,8 @@
-export { initialState } from "./state";
-export type { SearchState, ResponseApi, ResponseError, Film } from "./types";
+export { initialFavoriteState, initialSearchState } from "./state";
+export type {
+  SearchState,
+  FavoriteState,
+  ResponseApi,
+  ResponseError,
+  Film,
+} from "./types";

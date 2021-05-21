@@ -6,11 +6,11 @@ import { Provider } from "react-redux";
 
 import "normalize.css";
 
-import { search } from "./store/reducers";
+import { search, favorite } from "./store/reducers";
 import App from "./App";
 import "./index.css";
 
-const rootReducer = combineReducers({ search });
+const rootReducer = combineReducers({ search, favorite });
 
 export type RootState = ReturnType<typeof rootReducer>;
 

@@ -1,8 +1,12 @@
-import { SearchState } from "./types";
+import { SearchState, FavoriteState } from "./types";
 
-export const initialState: SearchState = {
+export const initialSearchState: SearchState = {
   films: [],
   searchResponse: null,
   loading: false,
   error: null,
+};
+
+export const initialFavoriteState: FavoriteState = {
+  favoritesFilms: [],
 };

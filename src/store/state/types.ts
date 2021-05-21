@@ -6,6 +6,10 @@ export type SearchState = {
   loading: boolean;
 };
 
+export type FavoriteState = {
+  favoritesFilms: Film[];
+};
+
 export type ResponseApi = {
   page: number;
   results: Film[];
