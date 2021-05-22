@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 import { Container, FilterBox } from "components";
 import { Film } from "store/state";
 import { Card, CardsWrapper, Pagination } from "components/UI";
-import { films } from "./mockData";
+import { RootState } from "index";
 
 const CARDS_PER_PAGE = 9;
+const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const Favorites = () => {
+  const { favoritesFilms: films } = useTypeSelector((state) => state.favorite);
   const [favoritesFilms] = useState<Film[]>(films);
   const [filteredFilms, setFilteredFilms] = useState<Film[]>([
     ...favoritesFilms,
