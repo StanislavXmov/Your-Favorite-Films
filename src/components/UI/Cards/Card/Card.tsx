@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { Button, Modal, CardFilmInfo } from "components/UI";
-import { addFavoriteFilm } from "store";
+import { addFavoriteFilm, removeFavoriteFilm } from "store";
 import { Film } from "store/state";
 import { apiImageUrl } from "api";
 
@@ -11,12 +11,13 @@ import { CardImagePlaceholder } from "./CardImagePlaceholder";
 
 type Props = {
   film: Film;
+  isFavoriteFilm: boolean;
 };
 
 const MAX_DESCRIPTION_LENGTH = 200;
 
 export const Card = (props: Props) => {
-  const { film } = props;
+  const { film, isFavoriteFilm } = props;
   const { posterPath, title, overview } = film;
   const [selectedFilm, setSelectedFilm] = useState<null | Film>(null);
   const dispatch = useDispatch();
@@ -27,8 +28,33 @@ export const Card = (props: Props) => {
     return string;
   };
   const getPosterSrc = apiImageUrl(posterPath);
-  const favoriteHandler = (favoriteFilm: Film) => {
+  const addToFavoriteHandler = (favoriteFilm: Film) => {
     dispatch(addFavoriteFilm(favoriteFilm));
+  };
+  const removeToFavoriteHandler = (id: number) => {
+    dispatch(removeFavoriteFilm(id));
+  };
+  const renderButton = () => {
+    if (isFavoriteFilm) {
+      return (
+        <Button
+          css={Styled.CardButtonStyle}
+          title="💔"
+          isDisabled={false}
+          type="button"
+          onClick={() => removeToFavoriteHandler(film.id)}
+        />
+      );
+    }
+    return (
+      <Button
+        css={Styled.CardButtonStyle}
+        title="💗"
+        isDisabled={false}
+        type="button"
+        onClick={() => addToFavoriteHandler(film)}
+      />
+    );
   };
   return (
     <>
@@ -48,13 +74,7 @@ export const Card = (props: Props) => {
             type="button"
             onClick={() => setSelectedFilm(film)}
           />
-          <Button
-            css={Styled.CardButtonStyle}
-            title="❤"
-            isDisabled={false}
-            type="button"
-            onClick={() => favoriteHandler(film)}
-          />
+          {renderButton()}
         </Styled.CardButtonsWrapper>
       </Styled.Card>
       {selectedFilm && (
@@ -72,6 +92,9 @@ export const Card = (props: Props) => {
               rating={selectedFilm.voteAverage}
               lang={selectedFilm.originalLanguage}
               onCloseHandler={() => setSelectedFilm(null)}
+              addToFavorite={() => addToFavoriteHandler(film)}
+              removeToFavorite={() => removeToFavoriteHandler(selectedFilm.id)}
+              isFavoriteFilm={isFavoriteFilm}
             />
           )}
         </Modal>

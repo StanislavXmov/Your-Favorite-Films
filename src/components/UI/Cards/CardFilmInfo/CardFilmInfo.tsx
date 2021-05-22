@@ -13,6 +13,9 @@ type Props = {
   lang: string;
   rating: number;
   onCloseHandler?: () => void;
+  addToFavorite: () => void;
+  removeToFavorite: () => void;
+  isFavoriteFilm: boolean;
 };
 
 export const CardFilmInfo = (props: Props) => {
@@ -23,10 +26,19 @@ export const CardFilmInfo = (props: Props) => {
     date,
     lang,
     rating,
-    onCloseHandler,
+    addToFavorite,
+    removeToFavorite,
+    isFavoriteFilm,
   } = props;
   const getDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString();
+  };
+  const favoriteHandler = () => {
+    if (isFavoriteFilm) {
+      removeToFavorite();
+    } else {
+      addToFavorite();
+    }
   };
   return (
     <Styled.Card>
@@ -47,10 +59,12 @@ export const CardFilmInfo = (props: Props) => {
           </Styled.FilmInfo>
           <Button
             css={Styled.AddToFavoriteButton}
-            title="Add to favorites"
+            title={
+              isFavoriteFilm ? "Remove from favorites" : "Add to favorites"
+            }
             isDisabled={false}
             type="button"
-            onClick={() => console.log(title)}
+            onClick={favoriteHandler}
           />
         </Styled.CardBody>
       </Styled.CardHeader>

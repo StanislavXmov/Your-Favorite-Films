@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 import { Container, FilterBox } from "components";
@@ -11,15 +11,30 @@ const useTypeSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const Favorites = () => {
   const { favoritesFilms: films } = useTypeSelector((state) => state.favorite);
-  const [favoritesFilms] = useState<Film[]>(films);
+  const [favoritesFilms, setFavoritesFilms] = useState<Film[]>(films);
   const [filteredFilms, setFilteredFilms] = useState<Film[]>([
     ...favoritesFilms,
   ]);
   const [currentPage, setCurrentPage] = useState(0);
 
+  useEffect(() => {
+    setFavoritesFilms(films);
+  }, [films]);
+  useEffect(() => {
+    setFilteredFilms([...favoritesFilms]);
+  }, [favoritesFilms]);
   const pagesAmountInPagination = Math.ceil(
     filteredFilms.length / CARDS_PER_PAGE
   );
+  const getIsFavoriteFilm = (film: Film): boolean => {
+    let isFavorite = false;
+    films.forEach((favoriteFilm) => {
+      if (favoriteFilm.id === film.id) {
+        isFavorite = true;
+      }
+    });
+    return isFavorite;
+  };
 
   const renderFilmsCards = () => {
     return filteredFilms
@@ -29,7 +44,8 @@ export const Favorites = () => {
       )
       .map((film) => {
         const { id } = film;
-        return <Card film={film} key={id} />;
+        const isFavorite = getIsFavoriteFilm(film);
+        return <Card film={film} key={id} isFavoriteFilm={isFavorite} />;
       });
   };
   return (
